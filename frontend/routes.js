@@ -9,9 +9,4 @@ module.exports = [
     description: "About",
     exact: true,
   },
-  {
-    to: "/todo",
-    description: "My apps",
-    exact: true,
-  },
 ]

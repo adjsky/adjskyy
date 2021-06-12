@@ -1,7 +1,4 @@
 const React = require("react")
-const {
-  Link,
-} = require("react-router-dom")
 require("./home.css")
 
 function Home() {
@@ -10,9 +7,9 @@ function Home() {
       <h1 className="home_title">
         I am Kirill Timchenko, a software developer.
       </h1>
-      <Link to="/todo" className="home_link">
+      <a href="https://github.com/adjsky" target="_blank" rel="noreferrer" className="home_link">
         - CHECK OUT MY APPS -
-      </Link>
+      </a>
     </div>
   )
 }

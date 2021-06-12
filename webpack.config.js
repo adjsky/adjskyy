@@ -6,7 +6,8 @@ module.exports = {
   entry: path.resolve(__dirname, "frontend", "app.jsx"),
   output: {
     path: path.resolve(__dirname, "./build"),
-    filename: "assets/bundle.js",
+    filename: "bundle.js",
+    publicPath: "/assets/",
   },
   devServer: {
     historyApiFallback: true,
@@ -36,7 +37,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
     ],
   },

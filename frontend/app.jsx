@@ -7,7 +7,6 @@ const {
 } = require("react-router-dom")
 const PageInfo = require("./components/PageInfo/PageInfo.jsx")
 const PageFooter = require("./components/PageFooter/PageFooter.jsx")
-const Todo = require("./pages/Todo/Todo.jsx")
 const Home = require("./pages/Home/Home.jsx")
 const About = require("./pages/About/About.jsx")
 const LanguageContext = require("./contexts/LanguageContext.jsx")
@@ -34,9 +33,6 @@ class App extends React.Component {
               </Route>
               <Route path="/about">
                 <About />
-              </Route>
-              <Route path="/todo">
-                <Todo />
               </Route>
             </Switch>
           </div>

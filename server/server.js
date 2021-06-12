@@ -4,7 +4,7 @@ const path = require("path")
 const app = express()
 const port = 8081
 
-app.use("/assets", express.static(path.join(__dirname, "../build/assets")))
+app.use("/assets", express.static(path.join(__dirname, "../build")))
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.path} ${req.ip}`)
   next()
