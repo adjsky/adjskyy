@@ -31,17 +31,14 @@
   list-style: none;
   display: flex;
   flex-direction: row;
-  align-items: center;
   column-gap: 5px;
 }
 
 .page-footer_contacts > li {
-  display: flex;
-  align-items: center;
+  font-size: 0.55rem;
 }
 
 .page-footer_contacts a {
-  font-size: 0.55rem;
   font-weight: 400;
   letter-spacing: 1px;
   color: white;
