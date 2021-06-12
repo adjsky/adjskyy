@@ -29,6 +29,10 @@ body {
     font-size: 17px;
   }
 
+  body {
+    background-attachment: scroll;
+  }
+
   .content {
     width: 100%;
     margin-left: 0;
