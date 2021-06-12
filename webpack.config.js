@@ -1,6 +1,5 @@
 const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin")
 
 module.exports = {
   mode: "development",
@@ -21,8 +20,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "frontend", "index.html"),
+      favicon: "./frontend/assets/favicon.svg",
     }),
-    new FaviconsWebpackPlugin("./frontend/assets/favicon.svg"),
   ],
   module: {
     rules: [

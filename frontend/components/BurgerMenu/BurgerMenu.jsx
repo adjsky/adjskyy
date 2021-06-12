@@ -65,10 +65,7 @@ class BurgerMenu extends React.Component {
             onClick={() => this.setState({ opened: false })}
           />
           <div className="nav-mobile_menu">
-            { children.map((element) => {
-              console.log(element)
-              return element
-            }) }
+            { children }
           </div>
         </div>
         <div
@@ -79,8 +76,8 @@ class BurgerMenu extends React.Component {
           onMouseOut={() => this.setState({ buttonHovered: false })}
           onBlur={() => this.setState({ buttonHovered: false })}
         >
-          {[...Array(3)].map(() => (
-            <div className={`nav-mobile_button-bars ${buttonHovered ? "hover" : ""}`} />
+          {[...Array(3)].map((_, index) => (
+            <div key={index} className={`nav-mobile_button-bars ${buttonHovered ? "hover" : ""}`} />
           ))}
         </div>
       </div>
