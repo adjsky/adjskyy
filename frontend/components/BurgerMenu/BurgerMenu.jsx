@@ -5,7 +5,6 @@ class BurgerMenu extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      opened: false,
       buttonHovered: false,
     }
 
@@ -22,22 +21,27 @@ class BurgerMenu extends React.Component {
   }
 
   handleKeyDownEvent(event) {
-    const { opened } = this.state
-    if (opened && event.key === "Escape") {
-      this.setState({ opened: false })
+    const { isOpen } = this.props
+    if (isOpen && event.key === "Escape") {
+      this.closeMenu(true)
     }
   }
 
   handleBgClick(event) {
-    const { opened } = this.state
-    if (event.target.className === "nav-mobile_bg" && opened) {
-      this.setState({ opened: false })
+    const { isOpen } = this.props
+    if (event.target.className === "nav-mobile_bg" && isOpen) {
+      this.closeMenu(true)
     }
   }
 
+  closeMenu(condition) {
+    const { onStateChange } = this.props
+    onStateChange({ isOpen: !condition })
+  }
+
   render() {
-    const { children, width } = this.props
-    const { opened, buttonHovered } = this.state
+    const { children, width, isOpen } = this.props
+    const { buttonHovered } = this.state
     const openedMenuWrap = {
       right: 0,
       width,
@@ -52,17 +56,17 @@ class BurgerMenu extends React.Component {
         <div
           className="nav-mobile_bg"
           onClick={this.handleBgClick}
-          style={opened ? {} : {
+          style={isOpen ? {} : {
             display: "none",
           }}
         />
         <div
           className="nav-mobile_menu-wrap"
-          style={opened ? openedMenuWrap : closedMenuWrap}
+          style={isOpen ? openedMenuWrap : closedMenuWrap}
         >
           <div
             className="nav-mobile_button-close"
-            onClick={() => this.setState({ opened: false })}
+            onClick={() => this.closeMenu(true)}
           />
           <div className="nav-mobile_menu">
             { children }
@@ -70,7 +74,7 @@ class BurgerMenu extends React.Component {
         </div>
         <div
           className="nav-mobile_button"
-          onClick={() => this.setState({ opened: !opened })}
+          onClick={() => this.closeMenu(false)}
           onMouseOver={() => this.setState({ buttonHovered: true })}
           onFocus={() => this.setState({ buttonHovered: true })}
           onMouseOut={() => this.setState({ buttonHovered: false })}
@@ -91,6 +95,8 @@ BurgerMenu.defaultProps = {
 
 BurgerMenu.propTypes = {
   width: PropTypes.string,
+  onStateChange: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
 }
 
 module.exports = BurgerMenu

@@ -12,10 +12,12 @@ class PageInfo extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      isMenuOpen: false,
     }
   }
 
   render() {
+    const { isMenuOpen } = this.state
     return (
       <div className="page-info">
         <div className="page-info_nav-wrap">
@@ -38,7 +40,10 @@ class PageInfo extends React.Component {
               }
           </nav>
           <nav className="nav-mobile">
-            <BurgerMenu>
+            <BurgerMenu
+              isOpen={isMenuOpen}
+              onStateChange={(state) => this.setState({ isMenuOpen: state.isOpen })}
+            >
               {
                 Routes.map((route, index) => (
                   <NavLink
@@ -47,6 +52,7 @@ class PageInfo extends React.Component {
                     key={index}
                     to={route.to}
                     exact={route.exact}
+                    onClick={() => this.setState({ isMenuOpen: false })}
                   >
                     {route.description}
                   </NavLink>
