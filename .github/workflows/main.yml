@@ -24,3 +24,17 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/fetchapp_frontend:latest
+  deploy:
+    needs: build
+    steps:
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            docker stop fetchapp_frontend
+            docker rm fetchapp_frontend
+            docker pull adjsky/fetchapp_frontend
+            docker run -p 8081:8081 -d adjsky/fetchapp_frontend
