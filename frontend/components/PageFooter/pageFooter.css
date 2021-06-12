@@ -27,7 +27,7 @@
 }
 
 .page-footer_contacts a {
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   font-weight: 400;
   letter-spacing: 1px;
   color: white;
@@ -35,10 +35,14 @@
   text-transform: uppercase;
 }
 
+.page-footer_contacts li * {
+  vertical-align: middle;
+}
+
 @media only screen and (max-width: 800px) {
   .page-footer {
     width: 100%;
     margin-left: 0;
-    position: static;
+    padding: 0 20px;
   }
 }
