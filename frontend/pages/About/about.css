@@ -1,0 +1,49 @@
+.about {
+  width: 100%;
+  background: white;
+  display: flex;
+}
+
+.about_wrap {
+  flex: 1 0 auto;
+  display: flex;
+}
+
+.about_info {
+  height: 100vh;
+  flex: 1 1 auto;
+}
+
+.about_info > h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.about_tech {
+  flex: 0 0 300px;
+  background-color: #EDE06B;
+}
+
+.about_tochange {
+  flex: 0 0 300px;
+}
+
+@media only screen and (max-width: 1366px) {
+  .about {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .about {
+    display: block;
+  }
+
+  .about_info {
+    padding-top: 80px;
+  }
+
+  .about_wrap {
+    display: block;
+  }
+}

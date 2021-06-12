@@ -1,12 +1,12 @@
 const React = require("react")
 const PropTypes = require("prop-types")
 
-function InputField(props) {
+function TodoInputField(props) {
   const { value, onChange, onEnterPress } = props
   const [error, setError] = React.useState(false)
   return (
     <input
-      className={`user_input ${error ? "input_error" : ""}`}
+      className={`todo_user-input ${error ? "todo_input-error" : ""}`}
       type="text"
       value={value}
       onChange={onChange}
@@ -24,10 +24,10 @@ function InputField(props) {
   )
 }
 
-InputField.propTypes = {
+TodoInputField.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   onEnterPress: PropTypes.func.isRequired,
 }
 
-module.exports = InputField
+module.exports = TodoInputField

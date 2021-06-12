@@ -1,0 +1,131 @@
+.todo {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.todo_user-input {
+  width: 100%;
+  outline: none;
+  padding: 10px 8px;
+  font-size: 1.2rem;
+  border: 2px solid gray;
+  border-radius: 2px;
+}
+
+.todo_user-input:focus {
+  border: 2px solid #7ebf98;
+}
+
+.todo_items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0;
+}
+
+.todo_item {
+  padding: 20px 15px;
+  border: 0.2px solid #bbbdbe;
+  border-radius: 1px;
+}
+
+.todo_item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo_item-row-name {
+  font-size: 1.3rem;
+}
+
+.todo_item-row-controls {
+  display: flex;
+  column-gap: 2px;
+  align-items: center;
+}
+
+.todo_item-row-control {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: white;
+  font-size: 1rem;
+  padding: 5px 5px;
+}
+
+.todo_item-row-control:hover {
+  color: red;
+}
+
+.todo_dialog-bg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: #00000075;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo_dialog {
+  width: 400px;
+  height: 250px;
+  background: #ffffff;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.todo_dialog-title {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.todo_dialog-input {
+  border: 2px solid gray;
+  outline: none;
+  padding: 5px;
+  font-size: 0.9rem;
+}
+
+.todo_dialog-input:focus {
+  border: 2px solid #7ebf98;
+}
+
+.todo_dialog-controls {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 5px;
+}
+
+.todo_dialog-confirm-btn {
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 15px;
+    background-color: #7BC587;
+    color: #FFFFFF;
+}
+
+.todo_dialog-close-btn {
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 15px;
+    background-color: #EA7571;
+    color: #FFFFFF;
+}
+
+@media only screen and (max-width: 500px) {
+  .todo_dialog {
+    width: 95vw;
+  }
+}

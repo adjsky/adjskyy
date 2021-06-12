@@ -1,9 +1,15 @@
-const { nanoid } = require("nanoid")
 const React = require("react")
 const ReactDOM = require("react-dom")
-const InputField = require("./components/InputField.jsx")
-const ItemList = require("./components/ItemList.jsx")
-const ItemChangeDialog = require("./components/ItemChangeDialog.jsx")
+const {
+  BrowserRouter: Router,
+  Switch,
+  Route,
+} = require("react-router-dom")
+const PageInfo = require("./components/PageInfo/PageInfo.jsx")
+const PageFooter = require("./components/PageFooter/PageFooter.jsx")
+const Todo = require("./pages/Todo/Todo.jsx")
+const Home = require("./pages/Home/Home.jsx")
+const About = require("./pages/About/About.jsx")
 const LanguageContext = require("./contexts/LanguageContext.jsx")
 require("./style.css")
 
@@ -11,65 +17,31 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      inputValue: "",
-      items: [],
-      idOfItemToChange: null,
+      lang: "en",
     }
-
-    this.onInputEnterPress = this.onInputEnterPress.bind(this)
-    this.onDialogConfirm = this.onDialogConfirm.bind(this)
-    this.onItemChange = this.onItemChange.bind(this)
-    this.onItemDelete = this.onItemDelete.bind(this)
-  }
-
-  onInputEnterPress() {
-    const { inputValue, items } = this.state
-    this.setState({
-      items: [{ id: nanoid(), value: inputValue }, ...items],
-      inputValue: "",
-    })
-  }
-
-  onDialogConfirm(result) {
-    const { idOfItemToChange, items } = this.state
-    const updatedItems = [...items]
-    const itemIndex = items.findIndex((item) => item.id === idOfItemToChange)
-    updatedItems[itemIndex].value = result
-    this.setState({ items: updatedItems, idOfItemToChange: null })
-  }
-
-  onItemChange(id) {
-    this.setState({ idOfItemToChange: id })
-  }
-
-  onItemDelete(id) {
-    const { items } = this.state
-    this.setState({ items: items.filter((item) => item.id !== id) })
   }
 
   render() {
-    const { items, inputValue, idOfItemToChange } = this.state
+    const { lang } = this.state
     return (
-      <LanguageContext.Provider value="en">
-        <div className="container">
-          <h1 className="title">Hello!</h1>
-          <InputField
-            value={inputValue}
-            onChange={(e) => this.setState({ inputValue: e.target.value })}
-            onEnterPress={this.onInputEnterPress}
-          />
-          <ItemList
-            items={items}
-            onItemChange={this.onItemChange}
-            onItemDelete={this.onItemDelete}
-          />
-
-          <ItemChangeDialog
-            show={idOfItemToChange !== null}
-            onClose={() => this.setState({ idOfItemToChange: null })}
-            onConfirm={this.onDialogConfirm}
-          />
-        </div>
+      <LanguageContext.Provider value={lang}>
+        <Router>
+          <PageInfo />
+          <div className="content">
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/todo">
+                <Todo />
+              </Route>
+            </Switch>
+          </div>
+          <PageFooter />
+        </Router>
       </LanguageContext.Provider>
     )
   }

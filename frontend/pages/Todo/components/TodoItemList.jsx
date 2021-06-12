@@ -1,9 +1,8 @@
 const React = require("react")
 const PropTypes = require("prop-types")
-const Item = require("./Item.jsx")
-const LanguageContext = require("../contexts/LanguageContext.jsx")
+const TodoItem = require("./TodoItem.jsx")
 
-class ItemList extends React.Component {
+class TodoItemList extends React.Component {
   constructor(props) {
     super(props)
 
@@ -13,25 +12,25 @@ class ItemList extends React.Component {
   generateItemList() {
     const { items, onItemChange, onItemDelete } = this.props
     return items.map((item) => (
-      <Item key={item.id} item={item} onChange={onItemChange} onDelete={onItemDelete} />
+      <li>
+        <TodoItem key={item.id} item={item} onChange={onItemChange} onDelete={onItemDelete} />
+      </li>
     ))
   }
 
   render() {
     return (
-      <div className="items">
+      <ul className="todo_items">
         {this.generateItemList()}
-      </div>
+      </ul>
     )
   }
 }
 
-ItemList.contextType = LanguageContext
-
-ItemList.propTypes = {
+TodoItemList.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
   onItemChange: PropTypes.func.isRequired,
   onItemDelete: PropTypes.func.isRequired,
 }
 
-module.exports = ItemList
+module.exports = TodoItemList

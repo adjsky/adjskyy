@@ -2,7 +2,7 @@ const React = require("react")
 const ReactDOM = require("react-dom")
 const PropTypes = require("prop-types")
 
-class ItemChangeDialog extends React.Component {
+class TodoItemChangeDialog extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -73,27 +73,27 @@ class ItemChangeDialog extends React.Component {
     }
 
     return ReactDOM.createPortal(
-      <div className="dialog_bg">
-        <div className="dialog">
-          <h3 className="dialog_title">Enter a new todo</h3>
+      <div className="todo_dialog-bg">
+        <div className="todo_dialog">
+          <h3 className="todo_dialog-title">Enter a new todo</h3>
           <input
-            className={`dialog_input ${error ? "input_error" : ""}`}
+            className={`todo_dialog-input ${error ? "todo_input-error" : ""}`}
             type="text"
             value={inputValue}
             onChange={(e) => this.setState({ inputValue: e.target.value })}
             onKeyPress={this.onInputKeyPress}
           />
-          <div className="dialog_controls">
+          <div className="todo_dialog-controls">
             <button
               type="button"
-              className="dialog_confirm_btn"
+              className="todo_dialog-confirm-btn"
               onClick={this.onConfirmClick}
             >
               Confirm
             </button>
             <button
               type="button"
-              className="dialog_close_btn"
+              className="todo_dialog-close-btn"
               onClick={this.close}
             >
               Close
@@ -106,10 +106,10 @@ class ItemChangeDialog extends React.Component {
   }
 }
 
-ItemChangeDialog.propTypes = {
+TodoItemChangeDialog.propTypes = {
   show: PropTypes.bool.isRequired,
   onConfirm: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
 }
 
-module.exports = ItemChangeDialog
+module.exports = TodoItemChangeDialog

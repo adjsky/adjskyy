@@ -12,15 +12,17 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, "./build"),
-    open: true,
+    open: false,
     compress: true,
-    port: 8080,
+    port: 8081,
+    host: '0.0.0.0',
+    disableHostCheck: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "frontend", "index.html"),
     }),
-    new FaviconsWebpackPlugin("./frontend/assets/favicon.png"),
+    new FaviconsWebpackPlugin("./frontend/assets/favicon.svg"),
   ],
   module: {
     rules: [
@@ -32,6 +34,10 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ["babel-loader"],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },

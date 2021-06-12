@@ -1,23 +1,23 @@
 const React = require("react")
 const PropTypes = require("prop-types")
 
-function Item(props) {
+function TodoItem(props) {
   const { item, onChange, onDelete } = props
   return (
-    <div className="item">
-      <div className="item_row">
-        <span className="item_row_name">{item.value}</span>
-        <div className="item_row_controls">
+    <div className="todo_item">
+      <div className="todo_item-row">
+        <span className="todo_item-row-name">{item.value}</span>
+        <div className="todo_item-row-controls">
           <button
             type="button"
-            className="item_row_control"
+            className="todo_item-row-control"
             onClick={() => onChange(item.id)}
           >
             Change
           </button>
           <button
             type="button"
-            className="item_row_control"
+            className="todo_item-row-control"
             onClick={() => onDelete(item.id)}
           >
             Delete
@@ -28,7 +28,7 @@ function Item(props) {
   )
 }
 
-Item.propTypes = {
+TodoItem.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.string,
     value: PropTypes.string,
@@ -37,4 +37,4 @@ Item.propTypes = {
   onDelete: PropTypes.func.isRequired,
 }
 
-module.exports = Item
+module.exports = TodoItem
