@@ -38,4 +38,4 @@ jobs:
             docker stop fetchapp_frontend
             docker rm fetchapp_frontend
             docker pull adjsky/fetchapp_frontend
-            docker run -p 8081:8081 -d adjsky/fetchapp_frontend
+            docker run -p 8081:8081 -d --name fetchapp_frontend adjsky/fetchapp_frontend
