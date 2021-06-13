@@ -4,10 +4,16 @@ const PropTypes = require("prop-types")
 class BurgerMenu extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      buttonHovered: false,
-    }
 
+    const { width } = props
+    this.openedMenuWrap = {
+      right: 0,
+      width,
+    }
+    this.closedMenuWrap = {
+      right: `-${width}`,
+      width,
+    }
     this.handleKeyDownEvent = this.handleKeyDownEvent.bind(this)
     this.handleBgClick = this.handleBgClick.bind(this)
   }
@@ -40,16 +46,7 @@ class BurgerMenu extends React.Component {
   }
 
   render() {
-    const { children, width, isOpen } = this.props
-    const { buttonHovered } = this.state
-    const openedMenuWrap = {
-      right: 0,
-      width,
-    }
-    const closedMenuWrap = {
-      right: `-${width}`,
-      width,
-    }
+    const { children, isOpen } = this.props
 
     return (
       <div>
@@ -62,7 +59,7 @@ class BurgerMenu extends React.Component {
         />
         <div
           className="nav-mobile_menu-wrap"
-          style={isOpen ? openedMenuWrap : closedMenuWrap}
+          style={isOpen ? this.openedMenuWrap : this.closedMenuWrap}
         >
           <div
             className="nav-mobile_button-close"
@@ -75,14 +72,10 @@ class BurgerMenu extends React.Component {
         <div
           className="nav-mobile_button"
           onClick={() => this.closeMenu(false)}
-          onMouseOver={() => this.setState({ buttonHovered: true })}
-          onFocus={() => this.setState({ buttonHovered: true })}
-          onMouseOut={() => this.setState({ buttonHovered: false })}
-          onBlur={() => this.setState({ buttonHovered: false })}
         >
-          {[...Array(3)].map((_, index) => (
-            <div key={index} className={`nav-mobile_button-bars ${buttonHovered ? "hover" : ""}`} />
-          ))}
+          <div className="nav-mobile_button-bars" />
+          <div className="nav-mobile_button-bars" />
+          <div className="nav-mobile_button-bars" />
         </div>
       </div>
     )
