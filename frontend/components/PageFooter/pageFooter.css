@@ -31,11 +31,14 @@
   list-style: none;
   display: flex;
   flex-direction: row;
-  column-gap: 5px;
 }
 
 .page-footer_contacts > li {
   font-size: 0.55rem;
+}
+
+.page-footer_contacts *:not(:last-child) {
+  margin-right: 5px;
 }
 
 .page-footer_contacts a {

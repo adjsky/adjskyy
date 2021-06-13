@@ -10,7 +10,7 @@
 }
 
 .page-info_nav-wrap {
-  height: 350px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -34,8 +34,11 @@
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-  row-gap: 12px;
   margin-right: 35px;
+}
+
+.nav-desktop *:not(:last-child) {
+  margin-bottom: 12px;
 }
 
 .nav-desktop_link {
@@ -96,10 +99,11 @@
 }
 
 .nav-mobile_button {
-  display: flex;
-  flex-direction: column;
-  row-gap: 5px;
   cursor: pointer;
+}
+
+.nav-mobile_button *:not(:last-child) {
+  margin-bottom: 5px;
 }
 
 .nav-mobile_button-bars {
