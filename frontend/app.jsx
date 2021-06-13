@@ -31,8 +31,13 @@ class App extends React.Component {
               <Route exact path="/">
                 <Home />
               </Route>
-              <Route path="/about">
+              <Route exact path="/about">
                 <About />
+              </Route>
+              <Route path="*">
+                <div className="not_found">
+                  <h1>404 page not found</h1>
+                </div>
               </Route>
             </Switch>
           </div>
