@@ -21,7 +21,10 @@ class MyApp extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ siteLoaded: true })
+    window.onload = () => {
+      this.setState({ siteLoaded: true })
+    }
+
     const { router } = this.props
     router.events.on("routeChangeStart", this.handleRouteChange)
     router.events.on("routeChangeComplete", this.handleRouteComplete)
