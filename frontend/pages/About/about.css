@@ -61,6 +61,10 @@
 }
 
 @media only screen and (max-width: 900px) {
+  .about {
+    margin-bottom: 0;
+  }
+
   .about.loading {
     height: 100vh;
   }
