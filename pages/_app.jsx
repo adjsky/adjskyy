@@ -12,12 +12,52 @@ class MyApp extends React.Component {
 
     this.state = {
       lang: "en",
+      isLoading: false,
+      siteLoaded: false,
     }
+
+    this.handleRouteChange = this.handleRouteChange.bind(this)
+    this.handleRouteComplete = this.handleRouteComplete.bind(this)
+  }
+
+  componentDidMount() {
+    this.setState({ siteLoaded: true })
+    const { router } = this.props
+    router.events.on("routeChangeStart", this.handleRouteChange)
+    router.events.on("routeChangeComplete", this.handleRouteComplete)
+  }
+
+  componentWillUnmount() {
+    const { router } = this.props
+    router.events.off("routeChangeStart", this.handleRouteChange)
+    router.events.off("routeChangeComplete", this.handleRouteComplete)
+  }
+
+  handleRouteChange() {
+    this.setState({ isLoading: true })
+  }
+
+  handleRouteComplete() {
+    this.setState({ isLoading: false })
   }
 
   render() {
     const { Component, pageProps } = this.props
-    const { lang } = this.state
+    const { lang, isLoading, siteLoaded } = this.state
+
+    const app = (
+      <>
+        <PageInfo />
+        <div className="content">
+          {isLoading ? <span>Loading...</span> : <Component {...pageProps} />}
+        </div>
+        <PageFooter />
+      </>
+    )
+
+    const overlayStyle = {
+      opacity: siteLoaded ? 0 : 1,
+    }
 
     return (
       <LanguageContext.Provider value={lang}>
@@ -27,11 +67,8 @@ class MyApp extends React.Component {
           <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
           <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         </Head>
-        <PageInfo />
-        <div className="content">
-          <Component {...pageProps} />
-        </div>
-        <PageFooter />
+        <div className="site-overlay" style={overlayStyle} />
+        { siteLoaded ? app : null }
       </LanguageContext.Provider>
     )
   }

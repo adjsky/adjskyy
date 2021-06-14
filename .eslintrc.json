@@ -26,6 +26,7 @@
       "no-console": "off",
       "jsx-a11y/click-events-have-key-events": "off",
       "no-restricted-syntax": "off",
-      "jsx-a11y/anchor-is-valid": "off"
+      "jsx-a11y/anchor-is-valid": "off",
+      "react/prop-types": "off"
     }
 }
