@@ -1,9 +1,19 @@
 .about {
   background: white;
-  display: flex;
   color: #3b3b3b;
   text-transform: uppercase;
   margin-bottom: 70px;
+}
+
+.about.loading {
+  height: calc(100vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about_wrap {
+  display: flex;
 }
 
 .about h2 {
@@ -13,7 +23,7 @@
   font-weight: 600;
 }
 
-.about_wrap {
+.about_flex-col {
   flex: 1 1 auto;
   display: flex;
 }
@@ -45,19 +55,23 @@
 }
 
 @media only screen and (max-width: 1480px) {
-  .about {
+  .about_wrap {
     flex-direction: column;
   }
 }
 
 @media only screen and (max-width: 900px) {
-  .about {
+  .about.loading {
+    height: 100vh;
+  }
+
+  .about_wrap {
     display: block;
     padding-top: 50px;
     margin-bottom: 0;
   }
   
-  .about_wrap {
+  .about_flex-col {
     display: block;
   }
 }
