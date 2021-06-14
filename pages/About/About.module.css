@@ -1,0 +1,58 @@
+.about {
+  background: white;
+  color: #3b3b3b;
+  text-transform: uppercase;
+  margin-bottom: 70px;
+  display: flex;
+}
+
+.title {
+  margin: 0;
+  padding: 60px 50px;
+  font-size: 1.65rem;
+  font-weight: 600;
+}
+
+.flexCol {
+  flex: 1 1 auto;
+  display: flex;
+}
+
+.firstCol {
+  flex: 1 1 auto;
+}
+
+.firstColParagraph {
+  margin: 50px 50px 30px 50px;
+  font-size: 0.7rem;
+  line-height: 1.2rem;
+  font-weight: 600;
+}
+
+.secondCol {
+  flex: 0 0 350px;
+  background-color: #EDE06B;
+}
+
+.thirdCol {
+  flex: 0 0 350px;
+  background-color: #F2F2F2;
+}
+
+@media only screen and (max-width: 1480px) {
+  .about {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .about {
+    margin-bottom: 0;
+    display: block;
+    padding-top: 50px;
+  }
+  
+  .flexCol {
+    display: block;
+  }
+}

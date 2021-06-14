@@ -1,0 +1,65 @@
+.bg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: rgba(1, 1, 1, 0.3);
+}
+
+.menuWrap {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  background-color: rgba(54, 52, 51, 1);
+  transition: right 0.25s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 20px;
+}
+
+.openButton {
+  cursor: pointer;
+}
+
+.openButtonBars:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.openButtonBars {
+  width: 25px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.closeButton {
+  position: relative;
+  align-self: flex-end;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.closeButton:after, .closeButton:before {
+  position: absolute;
+  top: 23px;
+  right: 12px;
+  content: ' ';
+  width: 30px;
+  height: 2px;
+  background-color: white;
+}
+
+.closeButton:before {
+  transform: rotate(-45deg);
+}
+
+.closeButton:after {
+  transform: rotate(45deg);
+}
