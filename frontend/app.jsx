@@ -9,6 +9,7 @@ const PageInfo = require("./components/PageInfo/PageInfo.jsx")
 const PageFooter = require("./components/PageFooter/PageFooter.jsx")
 const Home = require("./pages/Home/Home.jsx")
 const About = require("./pages/About/About.jsx")
+const ScrollToTop = require("./components/ScrollToTop/ScrollToTop.jsx")
 const LanguageContext = require("./contexts/LanguageContext.jsx")
 require("./style.css")
 
@@ -25,6 +26,7 @@ class App extends React.Component {
     return (
       <LanguageContext.Provider value={lang}>
         <Router>
+          <ScrollToTop />
           <PageInfo />
           <div className="content">
             <Switch>
