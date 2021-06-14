@@ -53,7 +53,7 @@ class BurgerMenu extends React.Component {
         <div
           className="nav-mobile_bg"
           onClick={this.handleBgClick}
-          style={isOpen ? {} : {
+          style={isOpen ? null : {
             display: "none",
           }}
         />
