@@ -54,15 +54,6 @@ class MyApp extends React.Component {
         <ClipLoader color="#3b3b3b" loading={isPageLoading} size={100} />
       </div>
     )
-    const app = (
-      <>
-        <PageInfo />
-        <div className="content">
-          {isPageLoading ? loadingPage : <Component {...pageProps} />}
-        </div>
-        <PageFooter />
-      </>
-    )
 
     const overlayStyle = {
       animation: siteLoaded ? "fadeOut 0.5s ease-in-out" : "",
@@ -80,7 +71,11 @@ class MyApp extends React.Component {
         <div className="site-overlay" style={overlayStyle}>
           <ClipLoader color="#3b3b3b" loading={!siteLoaded} size={150} />
         </div>
-        { siteLoaded ? app : null }
+        <PageInfo />
+        <div className="content">
+          {isPageLoading ? loadingPage : <Component {...pageProps} />}
+        </div>
+        <PageFooter />
       </LanguageContext.Provider>
     )
   }
