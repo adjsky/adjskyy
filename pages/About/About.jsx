@@ -43,7 +43,9 @@ function About() {
           <h2 className={styles.title}>Tech stack</h2>
         </section>
       </div>
-      <section className={styles.thirdCol}>asd</section>
+      <section className={styles.thirdCol}>
+        <h2 className={styles.title}>Contact me</h2>
+      </section>
     </div>
   )
 }
