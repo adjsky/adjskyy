@@ -2,10 +2,19 @@ import React from "react"
 import Head from "next/head"
 import { withRouter } from "next/router"
 import { ClipLoader } from "react-spinners"
+import NProgress from "nprogress"
 import LanguageContext from "../contexts/LanguageContext.jsx"
 import PageInfo from "../components/PageInfo/PageInfo.jsx"
 import PageFooter from "../components/PageFooter/PageFooter.jsx"
 import "./global.css"
+
+function handleRouteChange() {
+  NProgress.start()
+}
+
+function handleRouteComplete() {
+  NProgress.done()
+}
 
 class MyApp extends React.Component {
   constructor(props) {
@@ -13,47 +22,29 @@ class MyApp extends React.Component {
 
     this.state = {
       lang: "en",
-      isPageLoading: false,
       siteLoaded: false,
     }
-
-    this.handleRouteChange = this.handleRouteChange.bind(this)
-    this.handleRouteComplete = this.handleRouteComplete.bind(this)
   }
 
   componentDidMount() {
+    NProgress.configure({ showSpinner: false })
     window.onload = () => {
       this.setState({ siteLoaded: true })
     }
-
     const { router } = this.props
-    router.events.on("routeChangeStart", this.handleRouteChange)
-    router.events.on("routeChangeComplete", this.handleRouteComplete)
+    router.events.on("routeChangeStart", handleRouteChange)
+    router.events.on("routeChangeComplete", handleRouteComplete)
   }
 
   componentWillUnmount() {
     const { router } = this.props
-    router.events.off("routeChangeStart", this.handleRouteChange)
-    router.events.off("routeChangeComplete", this.handleRouteComplete)
-  }
-
-  handleRouteChange() {
-    this.setState({ isPageLoading: true })
-  }
-
-  handleRouteComplete() {
-    this.setState({ isPageLoading: false })
+    router.events.off("routeChangeStart", handleRouteChange)
+    router.events.off("routeChangeComplete", handleRouteComplete)
   }
 
   render() {
     const { Component, pageProps } = this.props
-    const { lang, isPageLoading, siteLoaded } = this.state
-
-    const loadingPage = (
-      <div className="loading-page">
-        <ClipLoader color="#3b3b3b" loading={isPageLoading} size={100} />
-      </div>
-    )
+    const { lang, siteLoaded } = this.state
 
     const overlayStyle = {
       animation: siteLoaded ? "fadeOut 0.5s ease-in-out" : "",
@@ -73,7 +64,7 @@ class MyApp extends React.Component {
         </div>
         <PageInfo />
         <div className="content">
-          {isPageLoading ? loadingPage : <Component {...pageProps} />}
+          <Component {...pageProps} />
         </div>
         <PageFooter />
       </LanguageContext.Provider>
