@@ -1,6 +1,7 @@
 import React from "react"
 import Head from "next/head"
 import { withRouter } from "next/router"
+import { ClipLoader } from "react-spinners"
 import LanguageContext from "../contexts/LanguageContext.jsx"
 import PageInfo from "../components/PageInfo/PageInfo.jsx"
 import PageFooter from "../components/PageFooter/PageFooter.jsx"
@@ -12,7 +13,7 @@ class MyApp extends React.Component {
 
     this.state = {
       lang: "en",
-      isLoading: false,
+      isPageLoading: false,
       siteLoaded: false,
     }
 
@@ -37,29 +38,35 @@ class MyApp extends React.Component {
   }
 
   handleRouteChange() {
-    this.setState({ isLoading: true })
+    this.setState({ isPageLoading: true })
   }
 
   handleRouteComplete() {
-    this.setState({ isLoading: false })
+    this.setState({ isPageLoading: false })
   }
 
   render() {
     const { Component, pageProps } = this.props
-    const { lang, isLoading, siteLoaded } = this.state
+    const { lang, isPageLoading, siteLoaded } = this.state
 
+    const loadingPage = (
+      <div className="loading-page">
+        <ClipLoader color="#3b3b3b" loading={isPageLoading} size={100} />
+      </div>
+    )
     const app = (
       <>
         <PageInfo />
         <div className="content">
-          {isLoading ? <span>Loading...</span> : <Component {...pageProps} />}
+          {isPageLoading ? loadingPage : <Component {...pageProps} />}
         </div>
         <PageFooter />
       </>
     )
 
     const overlayStyle = {
-      opacity: siteLoaded ? 0 : 1,
+      animation: siteLoaded ? "fadeOut 0.5s ease-in-out" : "",
+      visibility: siteLoaded ? "hidden" : "visible",
     }
 
     return (
@@ -70,7 +77,9 @@ class MyApp extends React.Component {
           <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
           <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         </Head>
-        <div className="site-overlay" style={overlayStyle} />
+        <div className="site-overlay" style={overlayStyle}>
+          <ClipLoader color="#3b3b3b" loading={!siteLoaded} size={150} />
+        </div>
         { siteLoaded ? app : null }
       </LanguageContext.Provider>
     )
