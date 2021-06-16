@@ -22,16 +22,34 @@
   flex: 1 1 auto;
 }
 
-.firstColParagraph {
+.firstColText {
   margin: 50px 50px 30px 50px;
   font-size: 0.7rem;
   line-height: 1.2rem;
   font-weight: 600;
 }
 
+.firstColParagraph {
+  margin: 0;
+}
+
+.firstColParagraph:not(:first-child) {
+  margin-top: 10px;
+}
+
 .secondCol {
   flex: 0 0 350px;
   background-color: #EDE06B;
+}
+
+.techList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.techListElement {
+
 }
 
 .thirdCol {
@@ -41,14 +59,13 @@
 
 @media only screen and (max-width: 1480px) {
   .about {
-    flex-direction: column;
+    display: block;
   }
 }
 
 @media only screen and (max-width: 900px) {
   .about {
     margin-bottom: 0;
-    display: block;
     padding-top: 50px;
   }
   
