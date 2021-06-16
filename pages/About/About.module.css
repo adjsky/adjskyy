@@ -4,61 +4,125 @@
   text-transform: uppercase;
   margin-bottom: 70px;
   display: flex;
+  font-weight: 600;
 }
 
 .title {
   margin: 0;
   padding: 60px 50px;
   font-size: 1.65rem;
-  font-weight: 600;
 }
 
-.flexCol {
+.aboutTechWrap {
   flex: 1 1 auto;
   display: flex;
 }
 
-.firstCol {
+.aboutCol {
   flex: 1 1 auto;
+  padding-bottom: 30px;
 }
 
-.firstColText {
-  margin: 50px 50px 30px 50px;
+.aboutInfoWrap {
+  margin: 50px 50px 0 50px;
   font-size: 0.7rem;
   line-height: 1.2rem;
-  font-weight: 600;
 }
 
-.firstColParagraph {
+.aboutInfo {
   margin: 0;
 }
 
-.firstColParagraph:not(:first-child) {
+.aboutInfo:not(:first-child) {
   margin-top: 10px;
 }
 
-.secondCol {
+.techCol {
   flex: 0 0 350px;
   background-color: #EDE06B;
+  padding-bottom: 30px;
 }
 
 .techList {
-  margin: 0;
+  margin: 0 50px;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-direction: column;
 }
 
-.techListElement {
-
+.techListElement:not(:first-child) {
+  margin-top: 30px;
 }
 
-.thirdCol {
+.techTitle {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.techInfo {
+  margin: 0;
+  margin-top: 5px;
+  font-size: 0.7rem;
+  line-height: 1.2rem;
+}
+
+.contactQuoteWrap {
   flex: 0 0 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactCol {
+  flex: 1 0 auto;
   background-color: #F2F2F2;
+  padding-bottom: 30px;
+}
+
+.contactInfo {
+  margin: 0 50px;
+  font-size: 0.7rem;
+  line-height: 1.2rem;
+}
+
+.quoteFigure {
+  flex: 0 0 auto;
+  margin: 0;
+  background-color: #3C3C3C;
+  color: #FFFFFF;
+  padding: 60px 50px;
+  text-align: center;
+}
+
+.quote {
+  text-transform: none;
+  margin: 0;
+  quotes: "“" "”" "‘" "’";
+  font-style: italic;
+  font-weight: 200;
+  font-size: 1.4rem;
+}
+
+.quote::before {
+  content: open-quote;
+}
+
+.quote::after {
+  content: close-quote;
+}
+
+.quoteCaption {
+  margin-top: 20px;
+  font-weight: 300;
+  font-size: 1rem;
 }
 
 @media only screen and (max-width: 1480px) {
   .about {
+    display: block;
+  }
+
+  .contactQuoteWrap {
     display: block;
   }
 }
@@ -69,7 +133,34 @@
     padding-top: 50px;
   }
   
-  .flexCol {
+  .aboutTechWrap {
     display: block;
+  }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 500px) {
+  .techList {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .techListElement {
+    flex: 1 0 34%;
+  }
+
+  .techListElement:not(:first-child) {
+    margin-top: 0;
+  }
+
+  .techListElement:nth-last-child(-n + 2) {
+    margin-top: 30px;
+  }
+
+  .techListElement:nth-child(2n) {
+    margin-left: 15px;
+  }
+
+  .techListElement:nth-child(2n + 1) {
+    margin-right: 15px;
   }
 }
