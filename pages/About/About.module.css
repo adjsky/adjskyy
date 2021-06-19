@@ -67,6 +67,11 @@
   line-height: 1.2rem;
 }
 
+.techInfoLink {
+  text-decoration: underline;
+  color: black;
+}
+
 .contactQuoteWrap {
   flex: 0 0 350px;
   display: flex;
@@ -79,19 +84,64 @@
   padding-bottom: 30px;
 }
 
-.contactInfo {
+.contacts {
   margin: 0 50px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactsElement:not(:first-child) {
+  margin-top: 20px;
+}
+
+.contactTitle {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.contactList {
+  margin: 0 15px 0;
+  padding: 0;
+  list-style-type: "-";
+}
+
+.contactListElement {
+  padding-left: 5px;
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+
+.contactLink {
+  text-decoration: underline;
+  color: #3b3b3b;
+}
+
+.contactInfo {
+  margin: 25px 50px 0;
   font-size: 0.7rem;
   line-height: 1.2rem;
+}
+
+.contactDirect {
+  text-transform: none;
 }
 
 .quoteFigure {
   flex: 0 0 auto;
   margin: 0;
-  background-color: #3C3C3C;
   color: #FFFFFF;
-  padding: 60px 50px;
+  padding: 70px 50px;
   text-align: center;
+}
+
+.quoteFigure:first-of-type {
+  background-color: #313131;
+}
+
+.quoteFigure:last-of-type {
+  background-color: #3C3C3C;
 }
 
 .quote {
@@ -125,6 +175,10 @@
   .contactQuoteWrap {
     display: block;
   }
+
+  .contacts {
+    flex-direction: row;
+  }
 }
 
 @media only screen and (max-width: 900px) {
@@ -135,6 +189,12 @@
   
   .aboutTechWrap {
     display: block;
+  }
+}
+
+@media only screen and (max-width: 499px) {
+  .contacts {
+    flex-direction: column;
   }
 }
 
@@ -162,5 +222,16 @@
 
   .techListElement:nth-child(2n + 1) {
     margin-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 1480px) and (min-width: 500px) {
+  .contacts {
+    flex-wrap: wrap;
+  }
+
+  .contactsElement:not(:first-child) {
+    margin-top: 0;
+    margin-left: 50px;
   }
 }

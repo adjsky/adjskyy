@@ -55,25 +55,65 @@ function About() {
               <li className={styles.techListElement}>
                 <h3 className={styles.techTitle}>Backend</h3>
                 <p className={styles.techInfo}>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum magnam eum accusantium, aliquam natus possimus at animi ullam eius ipsam saepe eos omnis recusandae esse unde, delectus, quidem totam quis.
+                  For developing backend services i prefer using golang, postgres / sqlite,
+                  docker, nginx.
+                  An example is&nbsp;
+                  <a
+                    className={styles.techInfoLink}
+                    href="https://github.com/adjsky/fetchapp_server"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    here.
+                  </a>
+                  &nbsp;Also you can access the API of this example at /api.
                 </p>
               </li>
               <li className={styles.techListElement}>
                 <h3 className={styles.techTitle}>Frontend</h3>
                 <p className={styles.techInfo}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias voluptatibus reiciendis autem aliquid earum inventore consequatur dolores non, delectus eligendi iusto fugit incidunt impedit ducimus. Temporibus sapiente cum rem nesciunt.
+                  For developing web interfaces i use html5/css3 along with react+nextjs.
+                  You can look at source code of this website&nbsp;
+                  <a
+                    className={styles.techInfoLink}
+                    href="https://github.com/adjsky/fetchapp_frontend"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    here.
+                  </a>
                 </p>
               </li>
               <li className={styles.techListElement}>
                 <h3 className={styles.techTitle}>Scripting</h3>
                 <p className={styles.techInfo}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, inventore assumenda. Dolor eaque harum a corrupti maxime impedit deleniti, nihil quidem doloremque, corporis assumenda optio soluta dolorem sapiente architecto. Veniam?
+                  I have experience in writing scripts in python or bash.
                 </p>
               </li>
               <li className={styles.techListElement}>
                 <h3 className={styles.techTitle}>Desktop</h3>
                 <p className={styles.techInfo}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi maiores officia quia? Ab, ratione quos! Cumque alias atque, assumenda velit voluptate pariatur sit perspiciatis hic et praesentium laudantium nulla amet.
+                  I have been using c++ for 2 years, mainly qt5 with cmake.
+                  You can look at one of my projects&nbsp;
+                  <a
+                    className={styles.techInfoLink}
+                    href="https://github.com/adjsky/fetchapp"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    here.
+                  </a>
+                  &nbsp;Besides from Qt5, i have been creating some 2d games.
+                  My silly &quot;terraria clone&quot; is&nbsp;
+                  <a
+                    className={styles.techInfoLink}
+                    href="https://github.com/adjsky/terraria_clone"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    here.
+                  </a>
+                  &nbsp;Also i use Linux as my main OS, so i know many aspects of it.
                 </p>
               </li>
             </ul>
@@ -82,13 +122,53 @@ function About() {
         <div className={styles.contactQuoteWrap}>
           <section className={styles.contactCol}>
             <h2 className={styles.title}>Contact me</h2>
+            <ul className={styles.contacts}>
+              <li className={styles.contactsElement}>
+                <h3 className={styles.contactTitle}>Social Media</h3>
+                <ul className={styles.contactList}>
+                  <li className={styles.contactListElement}>
+                    <a className={styles.contactLink} href="#">
+                      vkontakte
+                    </a>
+                  </li>
+                  <li className={styles.contactListElement}>
+                    <a className={styles.contactLink} href="#">
+                      instagram
+                    </a>
+                  </li>
+                  <li className={styles.contactListElement}>
+                    <a className={styles.contactLink} href="#">
+                      github
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li className={styles.contactsElement}>
+                <h3 className={styles.contactTitle}>Freelance hubs</h3>
+                <ul className={styles.contactList}>
+                  <li className={styles.contactListElement}>
+                    <a className={styles.contactLink} href="#">
+                      upwork
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
             <p className={styles.contactInfo}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta possimus ad corporis eos quo sint minus expedita velit dolor? Optio consequuntur voluptas praesentium quo dolorem ab ea totam sapiente odio.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae tempora facere quisquam aliquam voluptatem porro facilis, reiciendis atque reprehenderit illum? Ullam quisquam, amet modi quis est possimus? Voluptate, asperiores sequi.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quo sed minus eum, ut eveniet hic rem officia eius, cumque quae ipsa, reprehenderit est vitae consequatur. Quis ea dolorum consectetur.
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto eos laudantium animi sequi unde eligendi fuga est tenetur. Aut quas ipsa aspernatur, eius vel provident at quos sed voluptatibus ut?
+              Or you can directly send me an email to&nbsp;
+              <span className={styles.contactDirect}>lopr1965@gmail.com</span>
+              &nbsp;or a message in telegram to&nbsp;
+              <span className={styles.contactDirect}>@adjsky</span>
             </p>
           </section>
+          <figure className={styles.quoteFigure}>
+            <blockquote className={styles.quote}>
+              Be yourself; everyone else is already taken.
+            </blockquote>
+            <figcaption className={styles.quoteCaption}>
+              - Oscar Wilde
+            </figcaption>
+          </figure>
           <figure className={styles.quoteFigure}>
             <blockquote className={styles.quote}>
               The truth of a thing is in the feel of it, not the think of it.
