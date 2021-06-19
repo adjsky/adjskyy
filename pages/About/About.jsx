@@ -128,7 +128,7 @@ function About() {
                 <ul className={styles.contactList}>
                   <li className={styles.contactListElement}>
                     <a className={styles.contactLink} href="#">
-                      vkontakte
+                      vk
                     </a>
                   </li>
                   <li className={styles.contactListElement}>
