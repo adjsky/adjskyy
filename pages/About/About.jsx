@@ -127,28 +127,48 @@ function About() {
                 <h3 className={styles.contactTitle}>Social Media</h3>
                 <ul className={styles.contactList}>
                   <li className={styles.contactListElement}>
-                    <a className={styles.contactLink} href="#">
+                    <a
+                      className={styles.contactLink}
+                      href="https://vk.com/wannabe2dxd"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       vk
                     </a>
                   </li>
                   <li className={styles.contactListElement}>
-                    <a className={styles.contactLink} href="#">
+                    <a
+                      className={styles.contactLink}
+                      href="https://www.instagram.com/adjskyy"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       instagram
                     </a>
                   </li>
                   <li className={styles.contactListElement}>
-                    <a className={styles.contactLink} href="#">
+                    <a
+                      className={styles.contactLink}
+                      href="https://github.com/adjsky"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       github
                     </a>
                   </li>
                 </ul>
               </li>
               <li className={styles.contactsElement}>
-                <h3 className={styles.contactTitle}>Freelance hubs</h3>
+                <h3 className={styles.contactTitle}>Freelance</h3>
                 <ul className={styles.contactList}>
                   <li className={styles.contactListElement}>
-                    <a className={styles.contactLink} href="#">
-                      upwork
+                    <a
+                      className={styles.contactLink}
+                      href="https://www.fiverr.com/users/adjsky"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      fiverr
                     </a>
                   </li>
                 </ul>
