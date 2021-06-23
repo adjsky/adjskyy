@@ -1,20 +1,24 @@
 import React from "react"
 import Head from "next/head"
+import { useTranslation } from "next-i18next"
 import styles from "./Home.module.css"
 
 function Home() {
+  const { t } = useTranslation(["common", "home"])
   return (
     <>
       <Head>
-        <title>adjsky | Home</title>
-        <meta name="description" content="Here you can look at adjsky's portfolio." />
+        <title>{t("home:pageTitle")}</title>
+        <meta name="description" content={t("home:metaContent")} />
       </Head>
       <div className={styles.home}>
         <h1 className={styles.title}>
-          I am Kirill Timchenko, a software developer.
+          {t("home:title")}
         </h1>
         <a href="https://github.com/adjsky" target="_blank" rel="noreferrer" className={styles.link}>
-          - CHECK OUT MY APPS -
+          -
+          {t("home:check")}
+          -
         </a>
       </div>
     </>

@@ -19,11 +19,33 @@
   justify-content: space-between;
 }
 
-.copyright {
+.translations {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.translationsElement {
+  font-size: 0.6rem;
+}
+
+.translationsElement:not(:first-child) {
+  margin-left: 5px;
+}
+
+.translationsLink {
+  text-decoration: none;
   color: white;
-  font-size: 0.55rem;
+  text-transform: uppercase;
+  font-weight: 400;
   letter-spacing: 1px;
-} 
+}
+
+.translationsLink:hover {
+  color: yellow;
+}
 
 .contacts {
   margin: 0;

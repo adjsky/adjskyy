@@ -1,10 +1,10 @@
 import React from "react"
 import Head from "next/head"
 import { withRouter } from "next/router"
+import { appWithTranslation } from 'next-i18next'
 import { ClipLoader } from "react-spinners"
 import NProgress from "nprogress"
-import LanguageContext from "../contexts/LanguageContext.jsx"
-import PageInfo from "../components/PageInfo/PageInfo.jsx"
+import PageNav from "../components/PageNav/PageNav.jsx"
 import PageFooter from "../components/PageFooter/PageFooter.jsx"
 import "./global.css"
 
@@ -21,7 +21,6 @@ class MyApp extends React.Component {
     super(props)
 
     this.state = {
-      lang: "en",
       siteLoaded: false,
     }
   }
@@ -44,7 +43,7 @@ class MyApp extends React.Component {
 
   render() {
     const { Component, pageProps } = this.props
-    const { lang, siteLoaded } = this.state
+    const { siteLoaded } = this.state
 
     const overlayStyle = {
       animation: siteLoaded ? "fadeOut 0.5s ease-in-out" : "",
@@ -52,23 +51,24 @@ class MyApp extends React.Component {
     }
 
     return (
-      <LanguageContext.Provider value={lang}>
+      <>
         <Head>
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+          <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
           <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         </Head>
         <div className="site-overlay" style={overlayStyle}>
           <ClipLoader color="#3b3b3b" loading={!siteLoaded} size={150} />
         </div>
-        <PageInfo />
+        <PageNav />
         <div className="content">
           <Component {...pageProps} />
         </div>
         <PageFooter />
-      </LanguageContext.Provider>
+      </>
     )
   }
 }
 
-export default withRouter(MyApp)
+export default appWithTranslation(withRouter(MyApp))

@@ -1,10 +1,10 @@
 export default [
   {
     href: "/",
-    description: "Home",
+    localName: "home",
   },
   {
     href: "/about",
-    description: "About",
+    localName: "about",
   },
 ]

@@ -1,119 +1,102 @@
 import React from "react"
 import Image from "next/image"
 import Head from "next/head"
+import { useTranslation } from "next-i18next"
 import styles from "./About.module.css"
 
 function About() {
+  const { t } = useTranslation(["common", "about"])
   return (
     <>
       <Head>
-        <title>adjsky | About</title>
-        <meta name="description" content="Who adjsky is." />
+        <title>{t("about:pageTitle")}</title>
+        <meta name="description" content={t("about:metaContent")} />
       </Head>
       <div className={styles.about}>
         <div className={styles.aboutTechWrap}>
           <section className={styles.aboutCol}>
-            <h2 className={styles.title}>About me</h2>
+            <h2 className={styles.title}>{t("about:title")}</h2>
             <Image src="/about_pic5.jpg" width={640} height={427} layout="responsive" quality={100} />
             <div className={styles.aboutInfoWrap}>
               <p className={styles.aboutInfo}>
-                I am Kirill Timchenko, born in Russia, Birobidzhan.
-                My path of becoming as a developer started in 2017.
-                In summer holidays i learned html/css/javascript and made
-                some web pages for fun but felt like i needed to dive deeper.
-                Since that i started learning how a computer works under the hood,
-                what linux kernel, c/c++ is. Also i had a great CS teacher in school
-                who taught me a lot about algorithms. Theory is good but i realised
-                that i should make a real software. I wanted to write an application that
-                receives a text and then speaks it into a microphone. Since at that moment
-                i was mainly using python, i decided to write the application using pyside5.
-                After completing the project i started to study C++ and Qt5 deeply. I have
-                made a cross platform mp3 player for my mother (of course it was not really great
-                at all but it was literally my first big project) and a desktop application that
-                solves some exam problems at the request of my teacher. Between these projects
-                i found a great C++ library called SFML and thought why not to make a terraria
-                clone. I have implemented procedure world generation, breaking/placing blocks, UI,
-                inventory/chunk system, animations, world serialization. I dropped this project
-                and maybe i&apos;ll continue working on it.
+                {t("about:info1")}
               </p>
               <p className={styles.aboutInfo}>
-                Once i needed to write a backend service for my application, i had a litle bit of
-                experience with flask/django but i didn&apos;t like dynamically-typed languages
-                for big projects, so i instantly dropped node and python. I had no desire to
-                learn C# or Java but found Go and really liked it at first sight. Even now i really
-                like this language since it is really simple and solves all problems related to
-                backend development.
+                {t("about:info2")}
               </p>
               <p className={styles.aboutInfo}>
-                Now i am focusing on web development, more on backend than frontend.
+                {t("about:info3")}
               </p>
             </div>
           </section>
           <section className={styles.techCol}>
-            <h2 className={styles.title}>Tech stack</h2>
+            <h2 className={styles.title}>{t("about:techTitle")}</h2>
             <ul className={styles.techList}>
               <li className={styles.techListElement}>
-                <h3 className={styles.techTitle}>Backend</h3>
+                <h3 className={styles.techTitle}>{t("about:backendTitle")}</h3>
                 <p className={styles.techInfo}>
-                  For developing backend services i prefer using golang, postgres / sqlite,
-                  docker, nginx.
-                  An example is&nbsp;
+                  {t("about:backendInfo1")}
+                  &nbsp;
                   <a
                     className={styles.techInfoLink}
                     href="https://github.com/adjsky/fetchapp_server"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    here.
+                    {t("hereLink")}
                   </a>
-                  &nbsp;Also you can access the API of this example at /api.
+                  .&nbsp;
+                  {t("about:backendInfo2")}
                 </p>
               </li>
               <li className={styles.techListElement}>
-                <h3 className={styles.techTitle}>Frontend</h3>
+                <h3 className={styles.techTitle}>{t("about:frontendTitle")}</h3>
                 <p className={styles.techInfo}>
-                  For developing web interfaces i use html5/css3 along with react+nextjs.
-                  You can look at source code of this website&nbsp;
+                  {t("about:frontendInfo1")}
+                  &nbsp;
                   <a
                     className={styles.techInfoLink}
                     href="https://github.com/adjsky/fetchapp_frontend"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    here.
+                    {t("hereLink")}
                   </a>
+                  .
                 </p>
               </li>
               <li className={styles.techListElement}>
-                <h3 className={styles.techTitle}>Scripting</h3>
+                <h3 className={styles.techTitle}>{t("about:scriptTitle")}</h3>
                 <p className={styles.techInfo}>
-                  I have experience in writing scripts in python or bash.
+                  {t("about:scriptInfo1")}
                 </p>
               </li>
               <li className={styles.techListElement}>
-                <h3 className={styles.techTitle}>Desktop</h3>
+                <h3 className={styles.techTitle}>{t("about:desktopTitle")}</h3>
                 <p className={styles.techInfo}>
-                  I have been using c++ for 2 years, mainly qt5 with cmake.
-                  You can look at one of my projects&nbsp;
+                  {t("about:desktopInfo1")}
+                  &nbsp;
                   <a
                     className={styles.techInfoLink}
                     href="https://github.com/adjsky/fetchapp"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    here.
+                    {t("hereLink")}
                   </a>
-                  &nbsp;Besides from Qt5, i have been creating some 2d games.
-                  My silly &quot;terraria clone&quot; is&nbsp;
+                  .&nbsp;
+                  {t("about:desktopInfo2")}
+                  &nbsp;
                   <a
                     className={styles.techInfoLink}
                     href="https://github.com/adjsky/terraria_clone"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    here.
+                    {t("hereLink")}
                   </a>
-                  &nbsp;Also i use Linux as my main OS, so i know many aspects of it.
+                  .&nbsp;
+                  {t("about:desktopInfo3")}
                 </p>
               </li>
             </ul>
@@ -121,10 +104,10 @@ function About() {
         </div>
         <div className={styles.contactQuoteWrap}>
           <section className={styles.contactCol}>
-            <h2 className={styles.title}>Contact me</h2>
+            <h2 className={styles.title}>{t("about:contactTitle")}</h2>
             <ul className={styles.contacts}>
               <li className={styles.contactsElement}>
-                <h3 className={styles.contactTitle}>Social Media</h3>
+                <h3 className={styles.contactTitle}>{t("about:socialTitle")}</h3>
                 <ul className={styles.contactList}>
                   <li className={styles.contactListElement}>
                     <a
@@ -159,7 +142,7 @@ function About() {
                 </ul>
               </li>
               <li className={styles.contactsElement}>
-                <h3 className={styles.contactTitle}>Freelance</h3>
+                <h3 className={styles.contactTitle}>{t("about:freelanceTitle")}</h3>
                 <ul className={styles.contactList}>
                   <li className={styles.contactListElement}>
                     <a
@@ -175,26 +158,33 @@ function About() {
               </li>
             </ul>
             <p className={styles.contactInfo}>
-              Or you can directly send me an email to&nbsp;
+              {t("about:contactInfo1")}
+              &nbsp;
               <span className={styles.contactDirect}>lopr1965@gmail.com</span>
-              &nbsp;or a message in telegram to&nbsp;
+              &nbsp;
+              {t("about:contactInfo2")}
+              &nbsp;
               <span className={styles.contactDirect}>@adjsky</span>
             </p>
           </section>
           <figure className={styles.quoteFigure}>
             <blockquote className={styles.quote}>
-              Be yourself; everyone else is already taken.
+              {t("about:oscarWildeQuote")}
             </blockquote>
             <figcaption className={styles.quoteCaption}>
-              - Oscar Wilde
+              -
+              &nbsp;
+              {t("about:oscarWilde")}
             </figcaption>
           </figure>
           <figure className={styles.quoteFigure}>
             <blockquote className={styles.quote}>
-              The truth of a thing is in the feel of it, not the think of it.
+              {t("about:marilynMonroeQuote")}
             </blockquote>
             <figcaption className={styles.quoteCaption}>
-              - Stanley Kubrick
+              -
+              &nbsp;
+              {t("about:marilynMonroe")}
             </figcaption>
           </figure>
         </div>
