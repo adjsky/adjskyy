@@ -16,7 +16,7 @@ function About() {
         <div className={styles.aboutTechWrap}>
           <section className={styles.aboutCol}>
             <h2 className={styles.title}>{t("about:title")}</h2>
-            <Image src="/about_pic5.jpg" width={640} height={427} layout="responsive" quality={100} />
+            <Image src="/about_pic.jpg" width={640} height={427} layout="responsive" quality={100} />
             <div className={styles.aboutInfoWrap}>
               <p className={styles.aboutInfo}>
                 {t("about:info1")}

@@ -8,6 +8,8 @@ import PageNav from "../components/PageNav/PageNav.jsx"
 import PageFooter from "../components/PageFooter/PageFooter.jsx"
 import "./global.css"
 
+let firstLoad = true
+
 function handleRouteChange() {
   NProgress.start()
 }
@@ -21,13 +23,16 @@ class MyApp extends React.Component {
     super(props)
 
     this.state = {
-      siteLoaded: false,
+      siteLoaded: !firstLoad,
     }
   }
 
   componentDidMount() {
     NProgress.configure({ showSpinner: false })
     window.onload = () => {
+      if (firstLoad) {
+        firstLoad = false
+      }
       this.setState({ siteLoaded: true })
     }
     const { router } = this.props
@@ -46,8 +51,8 @@ class MyApp extends React.Component {
     const { siteLoaded } = this.state
 
     const overlayStyle = {
-      animation: siteLoaded ? "fadeOut 0.5s ease-in-out" : "",
-      visibility: siteLoaded ? "hidden" : "visible",
+      animation: siteLoaded && firstLoad ? "fadeOut 0.5s ease-in-out" : "",
+      visibility: siteLoaded && !firstLoad ? "hidden" : "visible",
     }
 
     return (

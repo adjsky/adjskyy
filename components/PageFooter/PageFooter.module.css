@@ -31,6 +31,11 @@
   font-size: 0.6rem;
 }
 
+.translationsElement:nth-child(even) {
+  display: flex;
+  align-items: center;
+}
+
 .translationsElement:not(:first-child) {
   margin-left: 5px;
 }
@@ -57,6 +62,12 @@
 
 .contactsElement {
   font-size: 0.55rem;
+  position: relative;
+}
+
+.contactsElement:nth-child(even) {
+  display: flex;
+  align-items: center;
 }
 
 .contactsElement:not(:last-child) {
@@ -73,6 +84,14 @@
 
 .contactsLink:hover {
   color: yellow;
+}
+
+.circle {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: yellow;
 }
 
 @media only screen and (max-width: 900px) {

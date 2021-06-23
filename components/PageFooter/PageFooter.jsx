@@ -19,6 +19,9 @@ function PageFooter() {
             </Link>
           </li>
           <li className={styles.translationsElement}>
+            <span className={styles.circle} />
+          </li>
+          <li className={styles.translationsElement}>
             <Link href={router.asPath} locale="ru">
               <a className={styles.translationsLink}>{t("ru")}</a>
             </Link>
@@ -36,7 +39,7 @@ function PageFooter() {
             </a>
           </li>
           <li className={styles.contactsElement}>
-            <Image src="/separator.png" alt="" width={5} height={5} />
+            <span className={styles.circle} />
           </li>
           <li className={styles.contactsElement}>
             <a
