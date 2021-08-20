@@ -126,19 +126,30 @@
   text-transform: none;
 }
 
+.education {
+  background-color: #313133;
+  color: #FFFFFF;
+  padding: 50px 35px;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  text-transform: none;
+  text-align: center;
+}
+
+.educationInfo {
+  margin: 0;
+  margin-top: 5px;
+  font-size: 0.7rem;
+}
+
 .quoteFigure {
   flex: 0 0 auto;
   margin: 0;
   color: #FFFFFF;
   padding: 70px 35px;
   text-align: center;
-}
-
-.quoteFigure:first-of-type {
-  background-color: #313131;
-}
-
-.quoteFigure:last-of-type {
   background-color: #3C3C3C;
 }
 

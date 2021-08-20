@@ -47,6 +47,16 @@ function About() {
                   </a>
                   .&nbsp;
                   {t("about:backendInfo2")}
+                  &nbsp;
+                  <a
+                    className={styles.techInfoLink}
+                    href="https://adjsky.site/api"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {t("hereLink")}
+                  </a>
+                  .
                 </p>
               </li>
               <li className={styles.techListElement}>
@@ -69,6 +79,14 @@ function About() {
                 <h3 className={styles.techTitle}>{t("about:scriptTitle")}</h3>
                 <p className={styles.techInfo}>
                   {t("about:scriptInfo1")}
+                  &nbsp;
+                  <a
+                    className={styles.techInfoLink}
+                    href="https://github.com/adjsky/university_position_parser"
+                    target="_blank"
+                    rel="noreferrer"
+                  >{t("hereLink")}</a>
+                  .
                 </p>
               </li>
               <li className={styles.techListElement}>
@@ -167,16 +185,9 @@ function About() {
               <span className={styles.contactDirect}>@adjsky</span>
             </p>
           </section>
-          <figure className={styles.quoteFigure}>
-            <blockquote className={styles.quote}>
-              {t("about:oscarWildeQuote")}
-            </blockquote>
-            <figcaption className={styles.quoteCaption}>
-              -
-              &nbsp;
-              {t("about:oscarWilde")}
-            </figcaption>
-          </figure>
+          <div className={styles.education}>
+            {t("about:educationInfo")}
+          </div>
           <figure className={styles.quoteFigure}>
             <blockquote className={styles.quote}>
               {t("about:marilynMonroeQuote")}
