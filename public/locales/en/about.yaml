@@ -19,7 +19,7 @@ info1: >-
   animations, world serialization. At the moment i dropped this project but maybe i'll continue working on it.
 info2: >-
   Once i needed to write a backend service for my application, i had a litle bit of
-  experience with flask/django but i didn&apos;t like dynamically-typed languages
+  experience with flask/django but i didn't like dynamically-typed languages
   for big projects, so i instantly dropped python. I had no desire to
   learn C# or Java but found Go and really liked it at first sight. Even now i really
   like this language since it is simple and solves all problems related to
