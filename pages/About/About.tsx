@@ -4,7 +4,7 @@ import Head from "next/head"
 import { useTranslation } from "next-i18next"
 import styles from "./About.module.css"
 
-function About() {
+function About(): JSX.Element {
   const { t } = useTranslation(["common", "about"])
   return (
     <>

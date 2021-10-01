@@ -1,11 +1,10 @@
 import React from "react"
 import { useRouter } from "next/router"
 import Link from "next/link"
-import Image from "next/image"
 import { useTranslation } from "next-i18next"
 import styles from "./PageFooter.module.css"
 
-function PageFooter() {
+function PageFooter(): JSX.Element {
   const { t } = useTranslation("footer")
   const router = useRouter()
 

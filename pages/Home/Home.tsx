@@ -3,7 +3,7 @@ import Head from "next/head"
 import { useTranslation } from "next-i18next"
 import styles from "./Home.module.css"
 
-function Home() {
+function Home(): JSX.Element {
   const { t } = useTranslation(["common", "home"])
   return (
     <>

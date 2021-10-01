@@ -4,22 +4,32 @@ import { withRouter } from "next/router"
 import { appWithTranslation } from 'next-i18next'
 import { ClipLoader } from "react-spinners"
 import NProgress from "nprogress"
-import PageNav from "../components/PageNav/PageNav.jsx"
-import PageFooter from "../components/PageFooter/PageFooter.jsx"
+import PageNav from "../components/PageNav/PageNav"
+import PageFooter from "../components/PageFooter/PageFooter"
+import type { AppProps } from "next/app"
+import type { NextRouter } from "next/router" 
 import "./global.css"
 
-let firstLoad = true
-
-function handleRouteChange() {
+function handleRouteChange(): void {
   NProgress.start()
 }
 
-function handleRouteComplete() {
+function handleRouteComplete(): void {
   NProgress.done()
 }
 
-class MyApp extends React.Component {
-  constructor(props) {
+let firstLoad = true
+
+type TProps = AppProps & {
+  router: NextRouter
+}
+
+type TState = {
+  siteLoaded: boolean
+}
+
+class MyApp extends React.Component<TProps, TState> {
+  constructor(props: AppProps) {
     super(props)
 
     this.state = {
@@ -50,7 +60,7 @@ class MyApp extends React.Component {
     const { Component, pageProps } = this.props
     const { siteLoaded } = this.state
 
-    const overlayStyle = {
+    const overlayStyle: React.CSSProperties = {
       animation: siteLoaded && firstLoad ? "fadeOut 0.5s ease-in-out" : "",
       visibility: siteLoaded && !firstLoad ? "hidden" : "visible",
     }
@@ -76,4 +86,4 @@ class MyApp extends React.Component {
   }
 }
 
-export default appWithTranslation(withRouter(MyApp))
+export default withRouter(appWithTranslation(MyApp))

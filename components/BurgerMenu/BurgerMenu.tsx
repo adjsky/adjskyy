@@ -1,62 +1,78 @@
 import React from "react"
-import PropTypes from "prop-types"
 import styles from "./BurgerMenu.module.css"
 
-class BurgerMenu extends React.Component {
-  constructor(props) {
+type TProps = {
+  width: number,
+  onStateChange: (state: MenuState) => void,
+  children: React.ReactNode,
+  isOpen: boolean
+}
+
+type MenuState = {
+  isOpen: boolean
+}
+
+class BurgerMenu extends React.Component<TProps> {
+  private readonly openedMenuWrap = {
+    right: 0,
+    width: 0
+  } 
+
+  private readonly closedMenuWrap = {
+    right: 0,
+    width: 0
+  }
+
+  constructor(props: TProps) {
     super(props)
 
     const { width } = props
-    this.openedMenuWrap = {
-      right: 0,
-      width,
-    }
-    this.closedMenuWrap = {
-      right: `-${width}`,
-      width,
-    }
+    this.openedMenuWrap.width = width
+    this.closedMenuWrap.right = -width
+
     this.handleKeyDownEvent = this.handleKeyDownEvent.bind(this)
     this.handleBgClick = this.handleBgClick.bind(this)
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     window.addEventListener("keydown", this.handleKeyDownEvent)
   }
 
-  componentWillUnmount() {
+  componentWillUnmount(): void {
     window.removeEventListener("keydown", this.handleKeyDownEvent)
   }
 
-  handleKeyDownEvent(event) {
+  handleKeyDownEvent(event: KeyboardEvent): void {
     const { isOpen } = this.props
     if (isOpen && event.key === "Escape") {
       this.closeMenu(true)
     }
   }
 
-  handleBgClick(event) {
+  handleBgClick(event: React.MouseEvent): void {
     const { isOpen } = this.props
-    if (event.target.className === styles.bg && isOpen) {
+    if ((event.target as HTMLElement).className === styles.bg && isOpen) {
       this.closeMenu(true)
     }
   }
 
-  closeMenu(condition) {
+  closeMenu(condition: boolean): void {
     const { onStateChange } = this.props
     onStateChange({ isOpen: !condition })
   }
 
-  render() {
+  render(): JSX.Element {
     const { children, isOpen } = this.props
+    const bgStyle: React.CSSProperties = isOpen ? {} : {
+      display: "none"
+    }
 
     return (
       <div>
         <div
           className={styles.bg}
           onClick={this.handleBgClick}
-          style={isOpen ? null : {
-            display: "none",
-          }}
+          style={bgStyle}
         />
         <div
           className={styles.menuWrap}
@@ -81,16 +97,6 @@ class BurgerMenu extends React.Component {
       </div>
     )
   }
-}
-
-BurgerMenu.defaultProps = {
-  width: "300px",
-}
-
-BurgerMenu.propTypes = {
-  width: PropTypes.string,
-  onStateChange: PropTypes.func.isRequired,
-  isOpen: PropTypes.bool.isRequired,
 }
 
 export default BurgerMenu

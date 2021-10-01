@@ -3,11 +3,11 @@ import Link from "next/link"
 import Image from "next/image"
 import { useTranslation } from "next-i18next"
 import Routes from "../../routes.js"
-import BurgerMenu from "../BurgerMenu/BurgerMenu.jsx"
-import NavLink from "../NavLink.jsx"
+import BurgerMenu from "../BurgerMenu/BurgerMenu"
+import NavLink from "../NavLink"
 import styles from "./PageNav.module.css"
 
-function PageNav() {
+function PageNav(): JSX.Element {
   const [isMenuOpen, setMenuState] = useState(false)
   const { t } = useTranslation(["nav"])
 
@@ -34,6 +34,7 @@ function PageNav() {
         </nav>
         <nav className={styles.navMobile}>
           <BurgerMenu
+            width={300}
             isOpen={isMenuOpen}
             onStateChange={(state) => setMenuState(state.isOpen)}
           >
