@@ -188,16 +188,6 @@ function About(): JSX.Element {
           <div className={styles.education}>
             {t("about:educationInfo")}
           </div>
-          <figure className={styles.quoteFigure}>
-            <blockquote className={styles.quote}>
-              {t("about:marilynMonroeQuote")}
-            </blockquote>
-            <figcaption className={styles.quoteCaption}>
-              -
-              &nbsp;
-              {t("about:marilynMonroe")}
-            </figcaption>
-          </figure>
         </div>
       </div>
     </>
