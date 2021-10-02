@@ -21,9 +21,9 @@ function PageNav(): JSX.Element {
         </Link>
         <nav className={styles.navDesktop}>
           {
-            Routes.map((route, index) => (
+            Routes.map((route) => (
               <NavLink
-                key={index}
+                key={route.localName}
                 href={route.href}
                 activeClassName={styles.activeLink}
               >
