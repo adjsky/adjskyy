@@ -1,5 +1,6 @@
 import React from "react"
 import Head from "next/head"
+import Link from "next/link"
 import { useTranslation } from "next-i18next"
 import styles from "./Home.module.css"
 
@@ -15,11 +16,13 @@ function Home(): JSX.Element {
         <h1 className={styles.title}>
           {t("home:title")}
         </h1>
-        <a href="https://github.com/adjsky" target="_blank" rel="noreferrer" className={styles.link}>
-          -
-          {t("home:check")}
-          -
-        </a>
+        <Link href="/projects">
+          <a className={styles.link}>
+            -
+            {t("home:check")}
+            -
+          </a>
+        </Link>
       </div>
     </>
   )

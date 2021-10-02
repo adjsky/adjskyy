@@ -1,5 +1,5 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import Home from "./Home/Home"
+import Home from "../components/Home/Home"
 import type { GetStaticProps, GetStaticPropsContext } from "next"
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
