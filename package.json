@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/nprogress": "^0.2.0",
-    "next": "^10.2.3",
+    "next": "^11.1.2",
     "next-i18next": "^8.5.1",
     "nprogress": "^0.2.0",
     "react": "^17.0.2",
@@ -18,10 +18,8 @@
     "react-spinners": "^0.11.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.32.0",
-    "@typescript-eslint/parser": "^4.32.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-react": "^7.26.1",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
     "typescript": "^4.4.3"
   }
 }
