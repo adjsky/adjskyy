@@ -1,5 +1,5 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import About from "../components/About/About"
+import About from "../components/About"
 import type { GetStaticProps, GetStaticPropsContext } from "next"
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {

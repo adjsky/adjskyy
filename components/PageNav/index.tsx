@@ -3,7 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useTranslation } from "next-i18next"
 import Routes from "../../routes"
-import BurgerMenu from "../BurgerMenu/BurgerMenu"
+import BurgerMenu from "../BurgerMenu"
 import NavLink from "../NavLink"
 import styles from "./PageNav.module.css"
 
