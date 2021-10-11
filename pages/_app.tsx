@@ -33,7 +33,7 @@ class MyApp extends React.Component<TProps, TState> {
     super(props)
 
     this.state = {
-      siteLoaded: false
+      siteLoaded: !firstLoad
     }
   }
 
