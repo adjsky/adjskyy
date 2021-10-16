@@ -23,13 +23,13 @@ info2: >-
   for big projects, so i instantly dropped python. I had no desire to
   learn C# or Java but found Go and really liked it at first sight. Even now i really
   like this language since it is simple and solves all problems related to
-  backend development.
+  backend development, but I am also looking towards Node.js.
 info3: >-
   Now i am focusing on web development, more on backend than frontend.
 techTitle: Tech stack
 backendTitle: Backend
 backendInfo1: >-
-  For developing backend services i prefer using golang, postgres / sqlite, docker, nginx. An example is
+  For developing backend services i prefer using golang/node.js, postgres / sqlite, docker, nginx. An example is
 backendInfo2: >-
   Also you can access the API of this example at
 frontendTitle: Frontend
