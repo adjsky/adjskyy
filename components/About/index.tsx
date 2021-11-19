@@ -178,7 +178,7 @@ function About(): JSX.Element {
             <p className={styles.contactInfo}>
               {t("about:contactInfo1")}
               &nbsp;
-              <span className={styles.contactDirect}>lopr1965@gmail.com</span>
+              <span className={styles.contactDirect}>infiernodelotroel@gmail.com</span>
               &nbsp;
               {t("about:contactInfo2")}
               &nbsp;
