@@ -16,7 +16,7 @@ function Home(): JSX.Element {
         <h1 className={styles.title}>
           {t("home:title")}
         </h1>
-        <Link href="/projects">
+        <Link href="/about">
           <a className={styles.link}>
             -
             {t("home:check")}
