@@ -1,4 +1,4 @@
-const { i18n } = require("./next-i18next.config.js");
+const { i18n } = require("./next-i18next.config.js")
 
 const webpack = (config, { dev, isServer }) => {
   if (!dev && !isServer) {
@@ -6,14 +6,14 @@ const webpack = (config, { dev, isServer }) => {
       react: "preact/compat",
       "react-dom/test-utils": "preact/test-utils",
       "react-dom": "preact/compat",
-    });
+    })
   }
 
-  return config;
-};
+  return config
+}
 
 module.exports = {
   i18n,
   webpack,
   reactStrictMode: true,
-};
+}
