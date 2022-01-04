@@ -22,7 +22,7 @@ function About(): JSX.Element {
               height={427}
               layout="responsive"
               quality={100}
-              alt="About"
+              alt=""
               priority
             />
             <div className={styles.aboutInfoWrap}>
