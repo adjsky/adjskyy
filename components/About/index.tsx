@@ -185,9 +185,6 @@ function About(): JSX.Element {
               <span className={styles.contactDirect}>@adjsky</span>
             </p>
           </section>
-          <div className={styles.education}>
-            {t("about:educationInfo")}
-          </div>
         </div>
       </div>
     </>
