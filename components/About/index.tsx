@@ -16,17 +16,19 @@ function About(): JSX.Element {
         <div className={styles.aboutTechWrap}>
           <section className={styles.aboutCol}>
             <h2 className={styles.title}>{t("about:title")}</h2>
-            <Image src="/about_pic.jpg" width={640} height={427} layout="responsive" quality={100} />
+            <Image
+              src="/about_pic.jpg"
+              width={640}
+              height={427}
+              layout="responsive"
+              quality={100}
+              alt="About"
+              priority
+            />
             <div className={styles.aboutInfoWrap}>
-              <p className={styles.aboutInfo}>
-                {t("about:info1")}
-              </p>
-              <p className={styles.aboutInfo}>
-                {t("about:info2")}
-              </p>
-              <p className={styles.aboutInfo}>
-                {t("about:info3")}
-              </p>
+              <p className={styles.aboutInfo}>{t("about:info1")}</p>
+              <p className={styles.aboutInfo}>{t("about:info2")}</p>
+              <p className={styles.aboutInfo}>{t("about:info3")}</p>
             </div>
           </section>
           <section className={styles.techCol}>
@@ -85,7 +87,9 @@ function About(): JSX.Element {
                     href="https://github.com/adjsky/university_position_parser"
                     target="_blank"
                     rel="noreferrer"
-                  >{t("hereLink")}</a>
+                  >
+                    {t("hereLink")}
+                  </a>
                   .
                 </p>
               </li>
@@ -125,12 +129,14 @@ function About(): JSX.Element {
             <h2 className={styles.title}>{t("about:contactTitle")}</h2>
             <ul className={styles.contacts}>
               <li className={styles.contactsElement}>
-                <h3 className={styles.contactTitle}>{t("about:socialTitle")}</h3>
+                <h3 className={styles.contactTitle}>
+                  {t("about:socialTitle")}
+                </h3>
                 <ul className={styles.contactList}>
                   <li className={styles.contactListElement}>
                     <a
                       className={styles.contactLink}
-                      href="https://vk.com/wannabe2dxd"
+                      href="https://vk.com/adjsky"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -160,7 +166,9 @@ function About(): JSX.Element {
                 </ul>
               </li>
               <li className={styles.contactsElement}>
-                <h3 className={styles.contactTitle}>{t("about:freelanceTitle")}</h3>
+                <h3 className={styles.contactTitle}>
+                  {t("about:freelanceTitle")}
+                </h3>
                 <ul className={styles.contactList}>
                   <li className={styles.contactListElement}>
                     <a
@@ -178,7 +186,9 @@ function About(): JSX.Element {
             <p className={styles.contactInfo}>
               {t("about:contactInfo1")}
               &nbsp;
-              <span className={styles.contactDirect}>infiernodelotroel@gmail.com</span>
+              <span className={styles.contactDirect}>
+                infiernodelotroel@gmail.com
+              </span>
               &nbsp;
               {t("about:contactInfo2")}
               &nbsp;
