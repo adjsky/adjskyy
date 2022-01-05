@@ -17,7 +17,7 @@ function About(): JSX.Element {
           <section className={styles.aboutCol}>
             <h2 className={styles.title}>{t("about:title")}</h2>
             <Image
-              src="/about_pic.jpg"
+              src="/about_pic.webp"
               width={640}
               height={427}
               layout="responsive"

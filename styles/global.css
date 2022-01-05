@@ -27,7 +27,7 @@ html {
 }
 
 body {
-  background: url("/bg.jpg") no-repeat fixed;
+  background: url("/bg.webp") no-repeat fixed;
   background-size: cover;
   background-position: bottom;
 }
