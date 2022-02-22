@@ -1,4 +1,5 @@
 import React from "react"
+import Head from "next/head"
 import { withRouter } from "next/router"
 import { appWithTranslation } from "next-i18next"
 import { ClipLoader } from "react-spinners"
@@ -72,6 +73,12 @@ class MyApp extends React.Component<TProps, TState> {
 
     return (
       <>
+        <Head>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+          />
+        </Head>
         <div className="site-overlay" style={overlayStyle}>
           <ClipLoader color="#3b3b3b" loading={!siteLoaded} size={150} />
         </div>
