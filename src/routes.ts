@@ -1,4 +1,4 @@
-export default [
+const routes = [
   {
     href: "/",
     localName: "home",
@@ -8,3 +8,5 @@ export default [
     localName: "about",
   },
 ]
+
+export default routes
