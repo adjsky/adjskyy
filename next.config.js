@@ -1,19 +1,7 @@
 const { i18n } = require("./next-i18next.config.js")
+const withPreact = require("next-plugin-preact")
 
-const webpack = (config, { dev, isServer }) => {
-  if (!dev && !isServer) {
-    Object.assign(config.resolve.alias, {
-      react: "preact/compat",
-      "react-dom/test-utils": "preact/test-utils",
-      "react-dom": "preact/compat",
-    })
-  }
-
-  return config
-}
-
-module.exports = {
+module.exports = withPreact({
   i18n,
-  webpack,
   reactStrictMode: true,
-}
+})

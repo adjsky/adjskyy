@@ -6,6 +6,7 @@ import styles from "./Home.module.css"
 
 function Home(): JSX.Element {
   const { t } = useTranslation(["common", "home"])
+
   return (
     <>
       <Head>
@@ -13,15 +14,9 @@ function Home(): JSX.Element {
         <meta name="description" content={t("home:metaContent")} />
       </Head>
       <div className={styles.home}>
-        <h1 className={styles.title}>
-          {t("home:title")}
-        </h1>
+        <h1 className={styles.title}>{t("home:title")}</h1>
         <Link href="/about">
-          <a className={styles.link}>
-            -
-            {t("home:check")}
-            -
-          </a>
+          <a className={styles.link}>-{t("home:check")}-</a>
         </Link>
       </div>
     </>

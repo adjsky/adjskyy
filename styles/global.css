@@ -3,6 +3,7 @@
     opacity: 1;
     visibility: visible;
   }
+
   to {
     opacity: 0;
     visibility: hidden;
@@ -23,7 +24,7 @@ body {
 
 html {
   font-size: 18px;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 body {
@@ -72,7 +73,7 @@ body {
   height: 101vh;
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 
 #nprogress {
@@ -82,7 +83,7 @@ body {
 }
 
 #nprogress .bar {
-  background: #EDE06B;
+  background: #ede06b;
   position: fixed;
   top: 0;
   left: 0;
@@ -97,12 +98,12 @@ body {
   right: 0px;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px #EDE06B, 0 0 5px #EDE06B;
-  opacity: 1.0;
+  box-shadow: 0 0 10px #ede06b, 0 0 5px #ede06b;
+  opacity: 1;
 
   -webkit-transform: rotate(3deg) translate(0px, -4px);
-      -ms-transform: rotate(3deg) translate(0px, -4px);
-          transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
 }
 
 @media only screen and (max-width: 900px) {

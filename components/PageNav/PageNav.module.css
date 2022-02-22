@@ -75,14 +75,14 @@
     flex-direction: row;
   }
 
-  .navDesktop{
+  .navDesktop {
     display: none;
   }
 
   .navMobile {
     display: block;
   }
-  
+
   .navWrap {
     flex: 1 0 auto;
     flex-direction: row;

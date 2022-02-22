@@ -2,9 +2,9 @@ import React from "react"
 import styles from "./BurgerMenu.module.css"
 
 type TProps = {
-  width: number,
-  onStateChange: (state: MenuState) => void,
-  children: React.ReactNode,
+  width: number
+  onStateChange: (state: MenuState) => void
+  children: React.ReactNode
   isOpen: boolean
 }
 
@@ -15,12 +15,12 @@ type MenuState = {
 class BurgerMenu extends React.Component<TProps> {
   private readonly openedMenuWrap = {
     right: 0,
-    width: 0
-  } 
+    width: 0,
+  }
 
   private readonly closedMenuWrap = {
     right: 0,
-    width: 0
+    width: 0,
   }
 
   constructor(props: TProps) {
@@ -44,6 +44,7 @@ class BurgerMenu extends React.Component<TProps> {
 
   handleKeyDownEvent(event: KeyboardEvent): void {
     const { isOpen } = this.props
+
     if (isOpen && event.key === "Escape") {
       this.closeMenu(true)
     }
@@ -51,6 +52,7 @@ class BurgerMenu extends React.Component<TProps> {
 
   handleBgClick(event: React.MouseEvent): void {
     const { isOpen } = this.props
+
     if ((event.target as HTMLElement).className === styles.bg && isOpen) {
       this.closeMenu(true)
     }
@@ -58,14 +60,18 @@ class BurgerMenu extends React.Component<TProps> {
 
   closeMenu(condition: boolean): void {
     const { onStateChange } = this.props
+
     onStateChange({ isOpen: !condition })
   }
 
   render(): JSX.Element {
     const { children, isOpen } = this.props
-    const bgStyle: React.CSSProperties = isOpen ? {} : {
-      display: "none"
-    }
+
+    const bgStyle: React.CSSProperties = isOpen
+      ? {}
+      : {
+          display: "none",
+        }
 
     return (
       <div>
@@ -82,9 +88,7 @@ class BurgerMenu extends React.Component<TProps> {
             className={styles.closeButton}
             onClick={() => this.closeMenu(true)}
           />
-          <div className={styles.menu}>
-            { children }
-          </div>
+          <div className={styles.menu}>{children}</div>
         </div>
         <div
           className={styles.openButton}

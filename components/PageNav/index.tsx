@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { useTranslation } from "next-i18next"
-import Routes from "../../routes"
+import Routes from "@/src/routes"
 import BurgerMenu from "../BurgerMenu"
 import NavLink from "../NavLink"
 import styles from "./PageNav.module.css"
@@ -20,17 +20,15 @@ function PageNav(): JSX.Element {
           </a>
         </Link>
         <nav className={styles.navDesktop}>
-          {
-            Routes.map((route) => (
-              <NavLink
-                key={route.localName}
-                href={route.href}
-                activeClassName={styles.activeLink}
-              >
-                <a className={styles.desktopLink}>{t(route.localName)}</a>
-              </NavLink>
-            ))
-          }
+          {Routes.map((route) => (
+            <NavLink
+              key={route.localName}
+              href={route.href}
+              activeClassName={styles.activeLink}
+            >
+              <a className={styles.desktopLink}>{t(route.localName)}</a>
+            </NavLink>
+          ))}
         </nav>
         <nav className={styles.navMobile}>
           <BurgerMenu
@@ -38,21 +36,16 @@ function PageNav(): JSX.Element {
             isOpen={isMenuOpen}
             onStateChange={(state) => setMenuState(state.isOpen)}
           >
-            {
-              Routes.map((route, index) => (
-                <Link
-                  key={index}
-                  href={route.href}
+            {Routes.map((route, index) => (
+              <Link key={index} href={route.href}>
+                <a
+                  className={styles.mobileLink}
+                  onClick={() => setMenuState(false)}
                 >
-                  <a
-                    className={styles.mobileLink}
-                    onClick={() => setMenuState(false)}
-                  >
-                    {t(route.localName)}
-                  </a>
-                </Link>
-              ))
-            }
+                  {t(route.localName)}
+                </a>
+              </Link>
+            ))}
           </BurgerMenu>
         </nav>
       </div>

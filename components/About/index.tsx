@@ -6,6 +6,7 @@ import styles from "./About.module.css"
 
 function About(): JSX.Element {
   const { t } = useTranslation(["common", "about"])
+
   return (
     <>
       <Head>
