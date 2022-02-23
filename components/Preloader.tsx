@@ -1,26 +1,32 @@
 import React, { useState, useEffect } from "react"
 import { ClipLoader } from "react-spinners"
 
+let firstLoad = true
+
 function Preloader() {
-  const [siteLoaded, setSiteLoaded] = useState(false)
+  const [siteLoaded, setSiteLoaded] = useState(!firstLoad)
 
   useEffect(() => {
-    const alreadyLoaded = document.readyState == "complete"
+    if (firstLoad) {
+      const alreadyLoaded = document.readyState == "complete"
 
-    const onLoad = () => {
-      setTimeout(() => setSiteLoaded(true), 500)
-    }
+      const onLoad = () => {
+        setTimeout(() => setSiteLoaded(true), 500)
 
-    if (alreadyLoaded) {
-      onLoad()
-    } else {
-      window.onload = onLoad
+        firstLoad = false
+      }
+
+      if (alreadyLoaded) {
+        onLoad()
+      } else {
+        window.onload = onLoad
+      }
     }
   }, [])
 
   const overlayStyle: React.CSSProperties = {
-    animation: siteLoaded ? "fadeOut 0.5s ease-in-out" : "",
-    visibility: siteLoaded ? "hidden" : "visible",
+    animation: siteLoaded && firstLoad ? "fadeOut 0.5s ease-in-out" : "",
+    visibility: siteLoaded && !firstLoad ? "hidden" : "visible",
   }
 
   return (
