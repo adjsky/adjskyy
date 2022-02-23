@@ -23,6 +23,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   useEffect(() => {
+    if (NProgress.isStarted()) {
+      handleRouteComplete()
+    }
+
     NProgress.configure({ showSpinner: false })
 
     router.events.on("routeChangeStart", handleRouteChange)
