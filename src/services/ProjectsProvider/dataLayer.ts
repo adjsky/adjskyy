@@ -10,7 +10,7 @@ function getData(): TProject[] | null {
   const parser = new Parser("yaml")
 
   const result = parser.parse<TProject[]>(
-    path.join(__dirname, "../../../../public/projectsInfo.yaml")
+    path.resolve(".", "./public/projectsInfo.yaml")
   )
 
   return result
