@@ -11,9 +11,13 @@
 }
 
 .resume h1 {
-  color: #333333;
   font-size: 2.05em;
   font-weight: 700;
+}
+
+.resume h1,
+.resume h3 {
+  color: #333333;
 }
 
 .resume h1 small {
