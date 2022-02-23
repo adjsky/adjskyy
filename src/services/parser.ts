@@ -27,7 +27,6 @@ class Parser {
 
       return result
     } catch (error) {
-      console.log(__dirname)
       console.log(error)
 
       return null
