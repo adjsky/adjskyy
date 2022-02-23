@@ -1,0 +1,168 @@
+.resume {
+  background-color: white;
+  padding: 50px 0;
+  font-size: 1rem;
+  color: #000;
+  margin-bottom: 70px;
+}
+
+.resume hr {
+  border: 1px solid #eee;
+}
+
+.resume h1 {
+  color: #333333;
+  font-size: 2.05em;
+  font-weight: 700;
+}
+
+.resume h1 small {
+  font-size: 0.398em;
+  font-weight: 400;
+  margin-left: 50px;
+}
+
+.resume a {
+  text-decoration: none;
+  color: #0088cc;
+}
+
+.resume a:hover {
+  text-decoration: underline;
+}
+
+.resume h1,
+.resume h2,
+.resume h3 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 760px;
+}
+
+.separator {
+  color: #eee;
+}
+
+.row {
+  padding: 10px 0;
+}
+
+.row h2,
+.row h3 {
+  font-size: 1em;
+}
+
+.row h2 {
+  color: #999;
+  font-weight: 400;
+}
+
+.row h3 small {
+  font-size: 0.778em;
+  color: #999;
+  font-weight: 400;
+}
+
+.breaker {
+  display: none;
+}
+
+.rowTitle {
+  width: 260px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.block {
+  width: 500px;
+  display: inline-block;
+}
+
+.block ul {
+  margin: 8px 0 0;
+  padding: 0;
+  padding-left: 30px;
+  font-size: 0.725em;
+}
+
+.block p {
+  font-size: 0.725em;
+  margin: 10px 0 0;
+}
+
+.block hr {
+  margin: 10px 0;
+  border: none;
+}
+
+.block ul li {
+  line-height: 1.4;
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1000px),
+  (max-width: 800px) {
+  .rowTitle {
+    width: 150px;
+  }
+
+  .breaker {
+    display: inline;
+  }
+
+  .resume h1 {
+    line-height: 0.9;
+  }
+
+  .resume h1 small {
+    margin: 0;
+  }
+
+  .container {
+    max-width: 650px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .resume {
+    margin-bottom: 0;
+    padding: 100px 0 50px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    max-width: 100%;
+    padding: 0 50px;
+  }
+
+  .block {
+    width: calc(100% - 150px);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .resume h1 {
+    font-size: 1.95em;
+  }
+
+  .rowTitle {
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .block {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  .resume {
+    font-size: 3.75vw;
+  }
+}

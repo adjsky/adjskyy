@@ -50,6 +50,19 @@ function PageFooter(): JSX.Element {
               github
             </a>
           </li>
+          <li className={styles.contactsElement}>
+            <span className={styles.circle} />
+          </li>
+          <li className={styles.contactsElement}>
+            <a
+              className={styles.contactsLink}
+              href="https://www.linkedin.com/in/adjskyy/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              linkedin
+            </a>
+          </li>
         </ul>
       </div>
     </footer>

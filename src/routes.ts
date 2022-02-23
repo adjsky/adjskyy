@@ -7,6 +7,10 @@ const routes = [
     href: "/about",
     localName: "about",
   },
+  {
+    href: "/resume",
+    localName: "resume",
+  },
 ]
 
 export default routes
