@@ -2,7 +2,9 @@ import React from "react"
 import { useTranslation } from "next-i18next"
 import styles from "./Projects.module.css"
 
-function Projects() {
+import type { ProjectsProps } from "./types"
+
+function Projects({ projects }: ProjectsProps) {
   const { t } = useTranslation(["common", "projects"])
 
   return (
