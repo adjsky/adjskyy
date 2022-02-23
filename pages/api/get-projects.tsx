@@ -6,6 +6,8 @@ const handle: NextApiHandler = (_, res) => {
 
   const result = service.getStructuredData()
 
+  res.setHeader("Content-Type", "application/json")
+
   if (result) {
     res.status(200).json({
       status: 200,
