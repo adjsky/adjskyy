@@ -1,4 +1,25 @@
-- title: asd
-  description: qwe
-  imagePath: qwe
-  link: qwe
+involved:
+  - title: ASSETUX
+    description: A fiat-to-crypto exchange build on interoperable DeFi
+    imagePath: /projects/assetux.webp
+    link: https://assetux.com
+  - title: FlashBack.one
+    description: A NFT ticketing platform
+    imagePath: /projects/flashback.webp
+    link: https://flashback.one
+own:
+  - title: Interview test
+    description: Small crypto exchanger made for interview test
+    imagePath: /projects/interview.webp
+    link: https://tz-chi.vercel.app
+  - title: PWA Admin Panel (not done yet)
+    description: I was doing it to learn more about PWA and get some fun
+    imagePath: /projects/adminpanel.webp
+    link: https://very-cool-project.vercel.app
+  - title: Terraria Clone
+    description: A silly Terraria clone made for fun with C++ and SFML
+    imagePath: /projects/terraria.webp
+    link: https://github.com/adjsky/terraria_clone
+  - title: Backend Client
+    description: I wrote this backend client in Golang for my CS teacher to help another students to pass exam tests
+    link: https://github.com/adjsky/fetchapp_server
