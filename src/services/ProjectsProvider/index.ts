@@ -1,12 +1,12 @@
 import getData from "./dataLayer"
 
-import type { TProject } from "./types"
+import type { TProjects } from "./types"
 
 /**
  * Class that gives an opportunity to get all projects with the needed data
  */
 class ProjectsProvider {
-  getStructuredData(): TProject[] | null {
+  getStructuredData(): TProjects[] | null {
     const result = getData()
 
     return result
