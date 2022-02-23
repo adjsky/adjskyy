@@ -1,0 +1,24 @@
+.projects {
+  height: 101vh;
+  background-color: white;
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects h1 {
+  color: #333;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-align: center;
+  margin: 0 30px;
+}
+
+@media only screen and (max-width: 900px) {
+  .projects {
+    margin-bottom: 0;
+  }
+}
