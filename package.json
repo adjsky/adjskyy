@@ -20,7 +20,8 @@
     "react-dom": "npm:@preact/compat",
     "react-spinners": "^0.11.0",
     "react-ssr-prepass": "npm:preact-ssr-prepass",
-    "sharp": "^0.30.1"
+    "sharp": "^0.30.1",
+    "yaml": "^1.10.2"
   },
   "devDependencies": {
     "@types/node": "^17.0.19",
