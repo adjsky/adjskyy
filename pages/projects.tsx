@@ -3,6 +3,7 @@ import Projects from "@/components/Projects"
 import ProjectsProvider from "@/src/services/ProjectsProvider"
 import captureWebsite from "capture-website"
 import path from "path"
+import config from "@/src/config"
 
 import type { GetStaticProps, GetStaticPropsContext } from "next"
 import type { ProjectsProps } from "@/components/Projects/types"
@@ -15,7 +16,7 @@ export const getStaticProps: GetStaticProps<ProjectsProps> = async (
 
   const projects = service.getStructuredData()
 
-  if (projects) {
+  if (projects && config.generateProjectsSnapshots == "true") {
     const allProjects = [...projects.own, ...projects.involved]
 
     for (const project of allProjects) {
@@ -26,7 +27,7 @@ export const getStaticProps: GetStaticProps<ProjectsProps> = async (
             path.resolve(".", "./public" + project.imagePath),
             {
               type: "webp",
-              delay: 1,
+              delay: 5,
               timeout: 0,
               overwrite: true,
             }

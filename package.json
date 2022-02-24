@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build:local": "cross-env NEXT_PUBLIC_GENERATE_SNAPSHOTS=true next build",
+    "build": "cross-env NEXT_PUBLIC_GENERATE_SNAPSHOTS=false next build",
     "start": "next start -p 8081"
   },
   "author": "adjsky",
@@ -11,6 +12,7 @@
   "dependencies": {
     "@types/nprogress": "^0.2.0",
     "capture-website": "^2.3.0",
+    "cross-env": "^7.0.3",
     "next": "^12.1.0",
     "next-i18next": "^10.4.0",
     "next-plugin-preact": "^3.0.6",

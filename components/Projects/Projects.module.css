@@ -1,24 +1,109 @@
 .projects {
-  height: 101vh;
   background-color: white;
   margin-bottom: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 1rem;
+  padding: 50px;
 }
 
-.projects h1 {
-  color: #333;
-  font-size: 2rem;
+.projects > * + * {
+  margin-top: 60px;
+}
+
+.block {
+}
+
+.blockTitle {
+  margin: 0;
+  margin-bottom: 30px;
+  color: #3b3b3b;
+  font-size: 1.5em;
   text-transform: uppercase;
-  font-weight: 400;
-  letter-spacing: 3px;
-  text-align: center;
-  margin: 0 30px;
+  letter-spacing: 1px;
+}
+
+.blockGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 50px;
+}
+
+.card {
+  box-shadow: rgb(0 0 0 / 12%) 1px 4px 19px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s linear;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.cardPreview {
+  display: flex;
+}
+
+.cardInfo {
+  padding: 15px 20px 25px 20px;
+}
+
+.cardInfo h3,
+.cardInfo p {
+  margin: 0;
+}
+
+.cardInfo h3 {
+  color: #3b3b3b;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.cardInfo p {
+  margin-top: 8px;
+  color: #3b3b3b;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 901px),
+  (max-width: 750px) {
+  .blockGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media only screen and (max-width: 900px) {
   .projects {
     margin-bottom: 0;
+    padding-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .blockGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .blockTitle {
+    font-size: 4.6vw;
+  }
+
+  .projects {
+    padding: 30px;
+    padding-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .blockGrid {
+    gap: 30px;
+  }
+
+  .projects > * + * {
+    margin-top: 40px;
   }
 }
