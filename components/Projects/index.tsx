@@ -1,4 +1,5 @@
 import React from "react"
+import Head from "next/head"
 import Image from "next/image"
 import { useTranslation } from "next-i18next"
 import styles from "./Projects.module.css"
@@ -33,24 +34,30 @@ function Projects({ projects }: ProjectsProps) {
   const { t } = useTranslation(["common", "projects"])
 
   return (
-    <main className={styles.projects}>
-      {projects?.involved && (
-        <section className={styles.block}>
-          <h2 className={styles.blockTitle}>Projects I was involved in</h2>
-          <div className={styles.blockGrid}>
-            {projects.involved.map((project) => mapProject(project))}
-          </div>
-        </section>
-      )}
-      {projects?.own && (
-        <section className={styles.block}>
-          <h2 className={styles.blockTitle}>Projects I developed</h2>
-          <div className={styles.blockGrid}>
-            {projects.own.map((project) => mapProject(project))}
-          </div>
-        </section>
-      )}
-    </main>
+    <>
+      <Head>
+        <title>{t("projects:pageTitle")}</title>
+        <meta name="description" content={t("projects:metaContent")} />
+      </Head>
+      <main className={styles.projects}>
+        {projects?.involved && (
+          <section className={styles.block}>
+            <h2 className={styles.blockTitle}>{t("projects:involved")}</h2>
+            <div className={styles.blockGrid}>
+              {projects.involved.map((project) => mapProject(project))}
+            </div>
+          </section>
+        )}
+        {projects?.own && (
+          <section className={styles.block}>
+            <h2 className={styles.blockTitle}>{t("projects:own")}</h2>
+            <div className={styles.blockGrid}>
+              {projects.own.map((project) => mapProject(project))}
+            </div>
+          </section>
+        )}
+      </main>
+    </>
   )
 }
 
