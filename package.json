@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/nprogress": "^0.2.0",
+    "capture-website": "^2.3.0",
     "next": "^12.1.0",
     "next-i18next": "^10.4.0",
     "next-plugin-preact": "^3.0.6",

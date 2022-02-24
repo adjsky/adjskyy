@@ -6,10 +6,10 @@ import type { TProjects } from "./types"
 /**
  * Get raw projects data
  */
-function getData(): TProjects[] | null {
+function getData(): TProjects | null {
   const parser = new Parser("yaml")
 
-  const result = parser.parse<TProjects[]>(
+  const result = parser.parse<TProjects>(
     path.resolve(".", "./public/projectsInfo.yaml")
   )
 

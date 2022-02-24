@@ -1,6 +1,8 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import Projects from "@/components/Projects"
 import ProjectsProvider from "@/src/services/ProjectsProvider"
+import captureWebsite from "capture-website"
+import path from "path"
 
 import type { GetStaticProps, GetStaticPropsContext } from "next"
 import type { ProjectsProps } from "@/components/Projects/types"
@@ -12,6 +14,29 @@ export const getStaticProps: GetStaticProps<ProjectsProps> = async (
   const service = new ProjectsProvider()
 
   const projects = service.getStructuredData()
+
+  if (projects) {
+    const allProjects = [...projects.own, ...projects.involved]
+
+    for (const project of allProjects) {
+      if (project.imagePath) {
+        try {
+          await captureWebsite.file(
+            project.link,
+            path.resolve(".", "./public" + project.imagePath),
+            {
+              type: "webp",
+              delay: 1,
+              timeout: 0,
+              overwrite: true,
+            }
+          )
+        } catch (error) {
+          console.log(`[projects.tsx] captureWebsite error: ${error}`)
+        }
+      }
+    }
+  }
 
   return {
     props: {
