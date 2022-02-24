@@ -2,7 +2,7 @@
   background-color: white;
   margin-bottom: 70px;
   font-size: 1rem;
-  padding: 50px;
+  padding: 60px 50px;
 }
 
 .projects > * + * {
@@ -16,9 +16,10 @@
   margin: 0;
   margin-bottom: 30px;
   color: #3b3b3b;
-  font-size: 1.5em;
+  font-size: 1.65em;
   text-transform: uppercase;
   letter-spacing: 1px;
+  line-height: 1.25rem;
 }
 
 .blockGrid {
