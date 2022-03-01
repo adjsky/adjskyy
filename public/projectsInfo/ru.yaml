@@ -1,0 +1,26 @@
+involved:
+  - title: ASSETUX
+    description: Фиатный криптообменник, основанный на DeFi
+    link: https://assetux.com
+    imagePath: /projects/assetux.webp
+  - title: FlashBack.one
+    description: Платформа по продаже NFT билетов на различные мероприятия
+    link: https://flashback.one
+    imagePath: /projects/flashback.webp
+own:
+  - title: Interview test
+    description: Тестовое задание в виде небольшого криптообменника
+    link: https://tz-chi.vercel.app
+    imagePath: /projects/interview.webp
+  - title: PWA админ панель (не сделано)
+    description: Я начал делать данную панель ради веселья, и, конечно же, чтобы изучить больше о технологии PWA
+    link: https://very-cool-project.vercel.app
+    imagePath: /projects/panel.webp
+  - title: Terraria Clone
+    description: Мой глупый клон тераррии, написанный на C++ и SFML
+    link: https://github.com/adjsky/terraria_clone
+    imagePath: /projects/terarria.webp
+  - title: Backend Client
+    description: Я написал этот backend-клиент на Golang для моего учителя по информатике с целью помочь будущим ученикам решать экзаменационные задачи
+    link: https://github.com/adjsky/fetchapp_server
+    imagePath: /projects/backend.webp

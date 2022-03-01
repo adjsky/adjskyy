@@ -4,6 +4,7 @@ import ProjectsProvider from "@/src/services/ProjectsProvider"
 import captureWebsite from "capture-website"
 import path from "path"
 import config from "@/src/config"
+import { isLocaleDeclared } from "@/src/locales"
 
 import type { GetStaticProps, GetStaticPropsContext } from "next"
 import type { ProjectsProps } from "@/components/Projects/types"
@@ -14,7 +15,11 @@ export const getStaticProps: GetStaticProps<ProjectsProps> = async (
   const locale = context.locale ? context.locale : "en"
   const service = new ProjectsProvider()
 
-  const projects = service.getStructuredData()
+  let projects = null
+
+  if (isLocaleDeclared(locale)) {
+    projects = service.getStructuredData(locale)
+  }
 
   if (projects && config.generateProjectsSnapshots == "true") {
     const allProjects = [...projects.own, ...projects.involved]
