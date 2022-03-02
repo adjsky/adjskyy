@@ -1,7 +1,11 @@
 import React from "react"
-import Head from "next/head"
+import { useRouter } from "next/router"
+import { NextSeo } from "next-seo"
 import Image from "next/image"
 import { useTranslation } from "next-i18next"
+
+import { generateTags } from "@/src/seo"
+
 import styles from "./Projects.module.css"
 
 import type { ProjectsProps } from "./types"
@@ -31,14 +35,18 @@ const mapProject = (project: TProject) => (
 )
 
 function Projects({ projects }: ProjectsProps) {
+  const router = useRouter()
   const { t } = useTranslation(["common", "projects"])
 
   return (
     <>
-      <Head>
-        <title>{t("projects:pageTitle")}</title>
-        <meta name="description" content={t("projects:metaContent")} />
-      </Head>
+      <NextSeo
+        {...generateTags(
+          t("projects:pageTitle"),
+          t("projects:metaContent"),
+          router.pathname
+        )}
+      />
       <main className={styles.projects}>
         {projects?.involved && (
           <section className={styles.block}>

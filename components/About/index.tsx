@@ -1,18 +1,26 @@
 import React from "react"
 import Image from "next/image"
-import Head from "next/head"
+import { useRouter } from "next/router"
+import { NextSeo } from "next-seo"
 import { useTranslation } from "next-i18next"
+
+import { generateTags } from "@/src/seo"
+
 import styles from "./About.module.css"
 
 function About(): JSX.Element {
+  const router = useRouter()
   const { t } = useTranslation(["common", "about"])
 
   return (
     <>
-      <Head>
-        <title>{t("about:pageTitle")}</title>
-        <meta name="description" content={t("about:metaContent")} />
-      </Head>
+      <NextSeo
+        {...generateTags(
+          t("about:pageTitle"),
+          t("about:metaContent"),
+          router.pathname
+        )}
+      />
       <div className={styles.about}>
         <div className={styles.aboutTechWrap}>
           <section className={styles.aboutCol}>

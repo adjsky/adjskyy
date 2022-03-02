@@ -1,5 +1,5 @@
 const constants = {
-  host: "https://adjsky.site",
+  host: "https://adjskyy.vercel.app",
 }
 
 export default constants

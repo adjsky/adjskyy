@@ -1,17 +1,25 @@
 import React from "react"
-import Head from "next/head"
+import { useRouter } from "next/router"
+import { NextSeo } from "next-seo"
 import { useTranslation } from "next-i18next"
+
+import { generateTags } from "@/src/seo"
+
 import styles from "./Resume.module.css"
 
 function Home(): JSX.Element {
+  const router = useRouter()
   const { t } = useTranslation(["common", "resume"])
 
   return (
     <>
-      <Head>
-        <title>{t("resume:pageTitle")}</title>
-        <meta name="description" content={t("resume:metaContent")} />
-      </Head>
+      <NextSeo
+        {...generateTags(
+          t("resume:pageTitle"),
+          t("resume:metaContent"),
+          router.pathname
+        )}
+      />
       <main className={styles.resume}>
         <div className={styles.container}>
           <h1>
