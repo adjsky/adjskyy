@@ -1,15 +1,23 @@
 import constants from "@/src/constants"
 
+import locales from "../locales"
+
+import type { NextSeoProps } from "next-seo"
+
 const { host } = constants
 
 export const generateTags = (
   title: string,
   description: string,
   url: string
-) => ({
+): NextSeoProps => ({
   title,
   description,
   canonical: host + url,
+  languageAlternates: locales.map((locale) => ({
+    hrefLang: locale,
+    href: host + "/" + locale + url,
+  })),
   openGraph: {
     url: host + url,
     title,
