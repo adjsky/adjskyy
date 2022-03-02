@@ -16,7 +16,7 @@ export const generateTags = (
     description,
     images: [
       {
-        url: "/about_pic.webp",
+        url: host + "/about_pic.webp",
         width: 640,
         height: 427,
         alt: "Image",
