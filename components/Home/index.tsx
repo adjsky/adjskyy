@@ -3,6 +3,8 @@ import { useRouter } from "next/router"
 import { NextSeo } from "next-seo"
 import Link from "next/link"
 import { useTranslation } from "next-i18next"
+
+import { getLocalizedURL } from "@/src/locales"
 import { generateTags } from "@/src/seo"
 
 import styles from "./Home.module.css"
@@ -17,7 +19,7 @@ function Home(): JSX.Element {
         {...generateTags(
           t("home:pageTitle"),
           t("home:metaContent"),
-          router.pathname
+          getLocalizedURL(router)
         )}
       />
       <div className={styles.home}>

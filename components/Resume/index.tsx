@@ -4,6 +4,7 @@ import { NextSeo } from "next-seo"
 import { useTranslation } from "next-i18next"
 
 import { generateTags } from "@/src/seo"
+import { getLocalizedURL } from "@/src/locales"
 
 import styles from "./Resume.module.css"
 
@@ -17,7 +18,7 @@ function Home(): JSX.Element {
         {...generateTags(
           t("resume:pageTitle"),
           t("resume:metaContent"),
-          router.pathname
+          getLocalizedURL(router)
         )}
       />
       <main className={styles.resume}>

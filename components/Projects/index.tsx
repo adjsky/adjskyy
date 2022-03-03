@@ -5,6 +5,7 @@ import Image from "next/image"
 import { useTranslation } from "next-i18next"
 
 import { generateTags } from "@/src/seo"
+import { getLocalizedURL } from "@/src/locales"
 
 import styles from "./Projects.module.css"
 
@@ -44,7 +45,7 @@ function Projects({ projects }: ProjectsProps) {
         {...generateTags(
           t("projects:pageTitle"),
           t("projects:metaContent"),
-          router.pathname
+          getLocalizedURL(router)
         )}
       />
       <main className={styles.projects}>

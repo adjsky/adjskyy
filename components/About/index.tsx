@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 import { NextSeo } from "next-seo"
 import { useTranslation } from "next-i18next"
 
+import { getLocalizedURL } from "@/src/locales"
 import { generateTags } from "@/src/seo"
 
 import styles from "./About.module.css"
@@ -18,7 +19,7 @@ function About(): JSX.Element {
         {...generateTags(
           t("about:pageTitle"),
           t("about:metaContent"),
-          router.pathname
+          getLocalizedURL(router)
         )}
       />
       <div className={styles.about}>
