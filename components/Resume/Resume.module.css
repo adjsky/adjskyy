@@ -4,6 +4,7 @@
   font-size: 1rem;
   color: #000;
   margin-bottom: 70px;
+  min-height: 100vh;
 }
 
 .resume hr {
