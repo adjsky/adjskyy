@@ -194,14 +194,11 @@ function About(): JSX.Element {
               </li>
             </ul>
             <p className={styles.contactInfo}>
-              {t("about:contactInfo1")}
-              &nbsp;
+              {t("about:contactInfo1")}{" "}
               <span className={styles.contactDirect}>
                 infiernodelotroel@gmail.com
-              </span>
-              &nbsp;
-              {t("about:contactInfo2")}
-              &nbsp;
+              </span>{" "}
+              {t("about:contactInfo2")}{" "}
               <span className={styles.contactDirect}>@adjsky</span>
             </p>
           </section>
