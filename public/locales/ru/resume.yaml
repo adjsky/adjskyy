@@ -2,24 +2,44 @@ pageTitle: adjsky | Резюме
 metaContent: Резюме
 name: Кирилл Тимченко
 experience: Опыт
+
 confidential: Конфиденциально (NDA)
 confidentialPeriod: Январь 2022 - по настоящий момент
 confidentialp1: Разработка внутреннего инструмента для финтех продукта с нуля
 confidentialp2: Разработка веб-приложения продукта с нуля
 confidentialp3: Участие в создании архитектуры веб-приложения
-confidentialp4: Поддержка существующего инструмента и кода
-confidentialp5: Оптимизация кода
-confidentialp6: Менторство
-prodcreatorsPeriod: Сенябрь 2021 - Январь 2022
-prodcreatorsp1: Разработка клиентской части (React, Next.js, SPA, PWA)
-prodcreatorsp2: Поддержка кода
-prodcreatorsp3: Автоматизация различных процессов
-prodcreatorsp4: Разработка с использованием блокчейн технологии
-prodcreatorsp5: Разработка финтех продукта
+confidentialp4: Поддержка существующего инструмента и кода (выделение повторяемого кода в отдельные библиотеки, рефакторинг)
+confidentialp5: Оптимизация производительности веб приложения (метрики lighthouse)
+confidentialp6: Менторство нескольких человек, code review
+confidentialp7: Написание различных тестов (unit, integration, e2e)
+confidentialp8: Участие в проектировании REST API
+confidentialp9: Исправление недочетов Ci/CD пайплайнов, внедрение в них новых решений
+
+assetux: ASSETUX
+assetuxPeriod: Ноябрь 2021 - Май 2022
+assetuxp1: Анализ требований, предложение технических решений
+assetuxp2: Разработка крипто финтех продукта с нуля
+assetuxp3: Создание UI компонентов на основе дизайна в Figma
+assetuxp4: Участие в проектировании REST API
+
+flashback: FlashBack One, Inc.
+flashbackPeriod: Сентябрь 2021 - Ноябрь 2021
+flashbackp1: Разработка веб приложения компании
+flashbackp2: Поддержка легаси кода, его рефакторинг и оптимизация
+flashbackp3: Автоматизация различных CI/CD процессов
+
+prodcreators: ProdCreators
+prodcreatorsPeriod: Сентябрь 2021 - Январь 2022
+prodcreatorsp1: Разработка веб решений на аутсорс
+prodcreatorsp2: >-
+  Используемый стек технологий: TypeScript, React / Preact, Next.js, Redux / Jotai, react-query,
+  next-auth, react-hook-form, tRPC, prisma, styled-components, jest
+
 freelance: Фриланс
 freelancePeriod: Апрель 2021 - Август 2021
 freelancep1: Разработка клиентской части (React, Next.js, PWA, SPA, лендинги и т.д.)
 freelancep2: Разработка серверной части, используя Golang и Node.js
+
 techSkills: Технические умения
 progLang: Языки программирования
 techandframework: Технологии & фреймворки

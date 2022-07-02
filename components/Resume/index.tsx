@@ -8,6 +8,14 @@ import { getLocalizedURL } from "@/src/locales"
 
 import styles from "./Resume.module.css"
 
+const jobs = [
+  { name: "confidential", items: 9 },
+  { name: "assetux", items: 4 },
+  { name: "flashback", items: 3 },
+  { name: "prodcreators", items: 2 },
+  { name: "freelance", items: 2 },
+]
+
 function Home(): JSX.Element {
   const router = useRouter()
   const { t } = useTranslation(["common", "resume"])
@@ -40,41 +48,23 @@ function Home(): JSX.Element {
               <h2>{t("resume:experience")}</h2>
             </div>
             <div className={styles.block}>
-              <h3>
-                <span>{t("resume:confidential")}</span>{" "}
-                <br className={styles.breaker} />
-                <small>{t("resume:confidentialPeriod")}</small>
-              </h3>
-              <ul>
-                <li>{t("resume:confidentialp1")}</li>
-                <li>{t("resume:confidentialp2")}</li>
-                <li>{t("resume:confidentialp3")}</li>
-                <li>{t("resume:confidentialp4")}</li>
-                <li>{t("resume:confidentialp5")}</li>
-                <li>{t("resume:confidentialp6")}</li>
-              </ul>
-              <hr />
-              <h3>
-                <span>ProdCreators</span> <br className={styles.breaker} />
-                <small>{t("resume:prodcreatorsPeriod")}</small>
-              </h3>
-              <ul>
-                <li>{t("resume:prodcreatorsp1")}</li>
-                <li>{t("resume:prodcreatorsp2")}</li>
-                <li>{t("resume:prodcreatorsp3")}</li>
-                <li>{t("resume:prodcreatorsp4")}</li>
-                <li>{t("resume:prodcreatorsp5")}</li>
-              </ul>
-              <hr />
-              <h3>
-                <span>{t("resume:freelance")}</span>{" "}
-                <br className={styles.breaker} />
-                <small>{t("resume:freelancePeriod")}</small>
-              </h3>
-              <ul>
-                <li>{t("resume:freelancep1")}</li>
-                <li>{t("resume:freelancep2")}</li>
-              </ul>
+              {jobs.map((job, index) => (
+                <React.Fragment key={index}>
+                  <h3>
+                    <span>{t(`resume:${job.name}`)}</span>{" "}
+                    <br className={styles.breaker} />
+                    <small>{t(`resume:${job.name}Period`)}</small>
+                  </h3>
+                  <ul>
+                    {Array.from({ length: job.items }).map((_, index) => (
+                      <li key={index}>
+                        {t(`resume:${job.name}p${index + 1}`)}
+                      </li>
+                    ))}
+                  </ul>
+                  {index != jobs.length - 1 && <hr />}
+                </React.Fragment>
+              ))}
             </div>
           </div>
           <hr />
