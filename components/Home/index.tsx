@@ -24,7 +24,7 @@ function Home(): JSX.Element {
       />
       <div className={styles.home}>
         <h1 className={styles.title}>{t("home:title")}</h1>
-        <Link href="/about">
+        <Link href="/resume">
           <a className={styles.link}>-{t("home:check")}-</a>
         </Link>
       </div>
