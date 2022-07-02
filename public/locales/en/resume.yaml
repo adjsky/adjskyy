@@ -2,25 +2,45 @@ pageTitle: adjsky | Résumé
 metaContent: Résumé
 name: Kirill Timchenko
 experience: Experience
+
 confidential: Confidential (NDA)
 confidentialPeriod: January 2022 - present
 confidentialp1: >-
   Development of an internal tool for a fintech product from scratch
 confidentialp2: Development of a product web application from scratch
 confidentialp3: Application design
-confidentialp4: Legacy code & tool support
-confidentialp5: Code optimizations (React, network requests, css)
-confidentialp6: Mentoring
-prodcreatorsPeriod: September 2021 - January 2022
-prodcreatorsp1: Frontend development (React, Next.js, SPA, PWA)
-prodcreatorsp2: Legacy code support
-prodcreatorsp3: Automation of various processes
-prodcreatorsp4: Development using a blockchain technology
-prodcreatorsp5: Development of a fintech product
+confidentialp4: Legacy code & tool support (separation of repetitive code into separate libraries, refactoring)
+confidentialp5: Web application performance optimization (lighthouse metrics)
+confidentialp6: Mentoring of several people, code review
+confidentialp7: Writing various tests (unit, integration, e2e)
+confidentialp8: Participation in REST API design
+confidentialp9: Correction of shortcomings of CI/CD pipelines, implementation of new solutions in them
+
+assetux: ASSETUX
+assetuxPeriod: November 2021 - May 2022
+assetuxp1: Requirements analysis, proposal of technical solutions
+assetuxp2: Development of a crypto fintech product from scratch
+assetuxp3: Creating UI components based on design in Figma
+assetuxp4: Participation in REST API design
+
+flashback: FlashBack One, Inc.
+flashbackPeriod: September 2021 - November 2021
+flashbackp1: Company web application development
+flashbackp2: Legacy code support, its refactoring and optimization
+flashbackp3: Automation of various CI/CD processes
+
+prodcreators: ProdCreators
+prodcreatorsPeriod: September 2021 - May 2022
+prodcreatorsp1: Development of web solutions for outsourcing
+prodcreatorsp2: >-
+  Tech stack: TypeScript, React / Preact, Next.js, Redux / Jotai, react-query,
+  next-auth, react-hook-form, tRPC, prisma, styled-components, jest
+
 freelance: Freelance
 freelancePeriod: April 2021 - August 2021
 freelancep1: Frontend development (React, Next.js, PWA, SPA, landings and etc.)
 freelancep2: Backend development using Golang and Node.js
+
 techSkills: Technical skills
 progLang: Programming languages
 techandframework: Techs & frameworks

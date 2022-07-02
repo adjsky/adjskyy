@@ -8,7 +8,7 @@ confidentialPeriod: Январь 2022 - по настоящий момент
 confidentialp1: Разработка внутреннего инструмента для финтех продукта с нуля
 confidentialp2: Разработка веб-приложения продукта с нуля
 confidentialp3: Участие в создании архитектуры веб-приложения
-confidentialp4: Поддержка существующего инструмента и кода (выделение повторяемого кода в отдельные библиотеки, рефакторинг)
+confidentialp4: Поддержка существующего инструмента и кода (выделение повторяющегося кода в отдельные библиотеки, рефакторинг)
 confidentialp5: Оптимизация производительности веб приложения (метрики lighthouse)
 confidentialp6: Менторство нескольких человек, code review
 confidentialp7: Написание различных тестов (unit, integration, e2e)
@@ -29,7 +29,7 @@ flashbackp2: Поддержка легаси кода, его рефактори
 flashbackp3: Автоматизация различных CI/CD процессов
 
 prodcreators: ProdCreators
-prodcreatorsPeriod: Сентябрь 2021 - Январь 2022
+prodcreatorsPeriod: Сентябрь 2021 - Май 2022
 prodcreatorsp1: Разработка веб решений на аутсорс
 prodcreatorsp2: >-
   Используемый стек технологий: TypeScript, React / Preact, Next.js, Redux / Jotai, react-query,
