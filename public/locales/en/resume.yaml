@@ -33,8 +33,8 @@ prodcreators: ProdCreators
 prodcreatorsPeriod: September 2021 - May 2022
 prodcreatorsp1: Development of web solutions for outsourcing
 prodcreatorsp2: >-
-  Tech stack: TypeScript, React / Preact, Next.js, Redux / Jotai, react-query,
-  next-auth, react-hook-form, tRPC, prisma, styled-components, jest
+  Tech stack: TypeScript, React / Preact, Next.js, Redux / Jotai, React Query,
+  NextAuth.js, react-hook-form, tRPC, prisma, styled-components, jest
 
 freelance: Freelance
 freelancePeriod: April 2021 - August 2021

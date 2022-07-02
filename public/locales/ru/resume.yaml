@@ -32,8 +32,8 @@ prodcreators: ProdCreators
 prodcreatorsPeriod: Сентябрь 2021 - Май 2022
 prodcreatorsp1: Разработка веб решений на аутсорс
 prodcreatorsp2: >-
-  Используемый стек технологий: TypeScript, React / Preact, Next.js, Redux / Jotai, react-query,
-  next-auth, react-hook-form, tRPC, prisma, styled-components, jest
+  Используемый стек технологий: TypeScript, React / Preact, Next.js, Redux / Jotai, React Query,
+  NextAuth.js, react-hook-form, tRPC, prisma, styled-components, jest
 
 freelance: Фриланс
 freelancePeriod: Апрель 2021 - Август 2021

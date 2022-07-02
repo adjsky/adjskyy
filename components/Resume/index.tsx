@@ -35,9 +35,7 @@ function Home(): JSX.Element {
             <span>{t("resume:name")}</span>
             <br className={styles.breaker} />
             <small>
-              <a href="mailto:infiernodelotroel@gmail.com">
-                infiernodelotroel@gmail.com
-              </a>
+              <a href="mailto:igorlfmartins@mail.ru">igorlfmartins@mail.ru</a>
               <span className={styles.separator}> | </span>
               <a href="https://telegram.me/adjsky">@adjsky</a>
             </small>
@@ -79,19 +77,20 @@ function Home(): JSX.Element {
                 <li>Golang</li>
                 <li>Python</li>
                 <li>Bash</li>
-                <li>C++</li>
               </ul>
               <hr />
               <h3>{t("resume:techandframework")}</h3>
               <ul>
-                <li>React / Preact & Redux Toolkit & RTK Query</li>
-                <li>React Hook Form</li>
-                <li>Next.js</li>
-                <li>next-i18next / react-i18next</li>
+                <li>
+                  Next.js & React / Preact & Redux Toolkit & RTK Query & Jotai
+                </li>
+                <li>React Hook Form & NextAuth.js & React Query</li>
+                <li>
+                  Tailwind CSS & styled-components & Radix UI & Headless UI &
+                  daisyUI
+                </li>
                 <li>Docker / docker-compose</li>
-                <li>HTML5 & CSS3 & PWA & SPA</li>
-                <li>Express</li>
-                <li>Qt5 / Qt6 & Qt QML</li>
+                <li>Express / Fastify & tRPC & prisma</li>
               </ul>
             </div>
           </div>
