@@ -4,10 +4,6 @@ const routes = [
     localName: "home",
   },
   {
-    href: "/about",
-    localName: "about",
-  },
-  {
     href: "/resume",
     localName: "resume",
   },
